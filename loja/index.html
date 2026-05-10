@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja — PediaSOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/style.css"/>
+  <style>
+    .loja-intro{padding:64px 0 24px}
+    .loja-filters{display:flex;gap:8px;margin:20px 0 32px;flex-wrap:wrap}
+    .filter-btn{padding:8px 18px;border-radius:100px;font-size:13px;font-weight:500;border:1.5px solid var(--sand-border);background:transparent;color:var(--slate);cursor:pointer;transition:var(--t);font-family:'DM Sans',sans-serif}
+    .filter-btn.active,.filter-btn:hover{background:var(--ink);color:white;border-color:var(--ink)}
+    .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:72px}
+    .prod-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--sand-border);overflow:hidden;transition:var(--t);position:relative}
+    .prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .prod-badge{position:absolute;top:12px;right:12px;color:white;font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;text-transform:uppercase}
+    .prod-thumb{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:42px}
+    .prod-body{padding:18px 20px 22px}
+    .prod-type{font-size:10px;color:var(--slate-lt);text-transform:uppercase;letter-spacing:.6px;font-weight:600;margin-bottom:6px}
+    .prod-title{font-family:'DM Serif Display',serif;font-size:17px;color:var(--ink);line-height:1.3;margin-bottom:8px}
+    .prod-desc{font-size:12px;color:var(--slate);line-height:1.6;font-weight:300;margin-bottom:18px}
+    .prod-foot{display:flex;justify-content:space-between;align-items:center}
+    .prod-price{font-family:'DM Serif Display',serif;font-size:21px;color:var(--ink)}
+    .prod-price small{font-size:12px;color:var(--slate-lt);font-family:'DM Sans',sans-serif;font-weight:300}
+    .btn-buy{padding:9px 18px;border-radius:100px;background:var(--ink);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:var(--t);text-decoration:none;display:inline-block}
+    .btn-buy:hover{background:var(--terracotta)}
+    @media(max-width:768px){.prod-grid{grid-template-columns:1fr} body{padding-bottom:80px;}}
+    @media(min-width:769px) and (max-width:1024px){.prod-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<nav class="top">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html"><img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/></a>
+    <ul class="nav-tabs">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../artigos/">Artigos</a></li>
+      <li><a href="../index.html">Calculadora</a></li>
+      <li><a href="index.html" class="active">Loja</a></li>
+      <li><a href="../index.html" class="nav-cta">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">⚖️</span>Doses</a>
+    <a class="mob-tab active" href="index.html"><span class="mob-tab-ico">🛍️</span>Loja</a>
+    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">👤</span>Sobre</a>
+  </div>
+</nav>
+<main style="padding-top:var(--nav-h);">
+  <div class="container">
+    <div class="loja-intro">
+      <div class="stag">Loja</div>
+      <h1 class="stitle">Recursos ao alcance <em>de todos</em></h1>
+      <p style="color:var(--slate);font-weight:300;max-width:500px;font-size:16px;">Guias práticos e cursos de baixo custo — para que a falta de informação nunca seja um risco.</p>
+    </div>
+    <div class="loja-filters">
+      <button class="filter-btn active" onclick="filterP('todos',this)">Todos</button>
+      <button class="filter-btn" onclick="filterP('pdf',this)">Guias PDF</button>
+      <button class="filter-btn" onclick="filterP('curso',this)">Cursos</button>
+      <button class="filter-btn" onclick="filterP('bundle',this)">Packs</button>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card" data-cat="pdf"><div class="prod-badge" style="background:var(--terracotta);">PDF</div><div class="prod-thumb" style="background:linear-gradient(135deg,#FFE8DC,#FFCFB8);">🏥</div><div class="prod-body"><div class="prod-type">Guia imprimível</div><div class="prod-title">Quando ir ao Urgência — Fluxograma</div><div class="prod-desc">Febre, respiração, traumatismo — zonas verde, amarela e vermelha.</div><div class="prod-foot"><div class="prod-price">€2<small>.50</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+      <div class="prod-card" data-cat="pdf"><div class="prod-badge" style="background:var(--terracotta);">PDF</div><div class="prod-thumb" style="background:linear-gradient(135deg,#FFE0DC,#FFC8C0);">🫀</div><div class="prod-body"><div class="prod-type">Guia imprimível</div><div class="prod-title">Cartão de RCP — Bebé e Criança</div><div class="prod-desc">Passo a passo de RCP e desobstrução de via aérea.</div><div class="prod-foot"><div class="prod-price">€1<small>.99</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+      <div class="prod-card" data-cat="pdf"><div class="prod-badge" style="background:var(--terracotta);">PDF</div><div class="prod-thumb" style="background:linear-gradient(135deg,#FDECD8,#FAD8B0);">💊</div><div class="prod-body"><div class="prod-type">Guia imprimível</div><div class="prod-title">Dosagem de Paracetamol e Ibuprofeno por Peso</div><div class="prod-desc">Tabela 3–40 kg, intervalos e contraindicações.</div><div class="prod-foot"><div class="prod-price">€1<small>.99</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+      <div class="prod-card" data-cat="pdf"><div class="prod-badge" style="background:var(--terracotta);">PDF</div><div class="prod-thumb" style="background:linear-gradient(135deg,#F5EAE0,#EDD8C8);">👶</div><div class="prod-body"><div class="prod-type">Manual digital</div><div class="prod-title">Manual de Primeiros Socorros Pediátricos</div><div class="prod-desc">40 páginas: queimaduras, engasgamento, alergias, convulsões.</div><div class="prod-foot"><div class="prod-price">€7<small>.99</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+      <div class="prod-card" data-cat="curso"><div class="prod-badge" style="background:#8B6040;">Curso</div><div class="prod-thumb" style="background:linear-gradient(135deg,#EDE0D8,#DDD0C8);">🎓</div><div class="prod-body"><div class="prod-type">Curso em vídeo</div><div class="prod-title">RCP em Bebés e Crianças para Leigos</div><div class="prod-desc">90 minutos de vídeo prático. Certificado incluído.</div><div class="prod-foot"><div class="prod-price">€14<small>.99</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+      <div class="prod-card" data-cat="bundle"><div class="prod-badge" style="background:#6B5040;">Pack</div><div class="prod-thumb" style="background:linear-gradient(135deg,#F0E8E0,#E0D8D0);">📦</div><div class="prod-body"><div class="prod-type">Bundle — Melhor valor</div><div class="prod-title">Pack Primeiros Socorros Completo</div><div class="prod-desc">Todos os guias PDF. Poupa 40% face à compra individual.</div><div class="prod-foot"><div class="prod-price">€9<small>.99</small></div><a class="btn-buy" href="https://pediasos.gumroad.com" target="_blank">Comprar →</a></div></div></div>
+    </div>
+  </div>
+</main>
+<footer><div class="foot-inner"><img src="../assets/logo.png" alt="PediaSOS" style="height:32px;"/><div class="foot-copy">© 2025 PediaSOS · Dr. Pedro Sampaio Nunes</div><div class="foot-links"><a href="#">Privacidade</a></div><div class="foot-emerg">Conteúdo educativo. Em emergência ligue <strong>112</strong>.</div></div></footer>
+<script>
+function filterP(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.prod-card').forEach(c=>{c.style.display=(cat==='todos'||c.dataset.cat===cat)?'block':'none';});
+}
+</script>
+<script src="../assets/main.js"></script>
+</body>
+</html>
