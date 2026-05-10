@@ -203,7 +203,7 @@
           </div>
           <div class="id-card-body">
             <div class="id-stats">
-              <div class="id-stat"><div class="id-stat-n">15+</div><div class="id-stat-l">Anos experiência</div></div>
+              <div class="id-stat"><div class="id-stat-n">20+</div><div class="id-stat-l">Anos experiência</div></div>
               <div class="id-stat"><div class="id-stat-n">UCIP</div><div class="id-stat-l">Cuidados Intensivos</div></div>
               <div class="id-stat"><div class="id-stat-n">SBV</div><div class="id-stat-l">Formador certificado</div></div>
               <div class="id-stat"><div class="id-stat-n">SNS</div><div class="id-stat-l">Serviço Público</div></div>
@@ -248,7 +248,7 @@
         <div class="stag">Sobre mim</div>
         <h2 class="stitle">Dr. Pedro<br>Sampaio <em>Nunes</em></h2>
         <div class="sobre-text">
-          <p>Sou médico especialista em Pediatria com diferenciação em Cuidados Intensivos Pediátricos, a exercer no Serviço Nacional de Saúde há mais de uma década.</p>
+          <p>Sou médico especialista em Pediatria com diferenciação em Cuidados Intensivos Pediátricos, a exercer no Serviço Nacional de Saúde há mais de 20 anos.</p>
           <p>O PediaSOS nasceu da convicção de que os pais merecem acesso a informação pediátrica de qualidade — honesta, baseada em evidência, e compreensível.</p>
           <p>Aqui encontra guias práticos, artigos e ferramentas criadas com o mesmo rigor que aplico no exercício clínico diário.</p>
         </div>
@@ -275,7 +275,7 @@
     <div class="calc-wrap">
       <div class="stag">Ferramenta educativa</div>
       <h2 class="stitle">Calculadora de <em>Doses</em></h2>
-      <div class="calc-disc"><div class="calc-disc-ico">⚠️</div><div class="calc-disc-txt"><strong>Ferramenta de apoio educativo — não substitui prescrição médica.</strong> Confirme sempre com o seu pediatra ou farmacêutico. Urgência: <strong>112</strong>.</div></div>
+      <div class="calc-disc"><div class="calc-disc-ico">⚠️</div><div class="calc-disc-txt"><strong>Ferramenta de apoio educativo — não substitui prescrição médica.</strong> Confirme sempre com o seu pediatra ou farmacêutico. Se os sintomas piorarem ou não melhorarem em 48h, contacte o <strong>SNS 24 (808 24 24 24)</strong>. Emergência: <strong>112</strong>.</div></div>
       <div class="calc-grid">
         <div class="calc-panel">
           <h3>Dados da criança</h3>
@@ -359,8 +359,8 @@ function filterP(cat,btn){
   document.querySelectorAll('.prod-card').forEach(c=>{c.style.display=(cat==='todos'||c.dataset.cat===cat)?'block':'none';});
 }
 const DRUGS={
-  para:{name:'Paracetamol',classe:'Analgésico / Antipirético',doseKg:15,doseMax:1000,doseDiaMgKg:60,doseDiaAbsMax:4000,intervalH:6,dosesMax:4,minKg:3.5,contra:'Insuficiência hepática grave. Não associar a outros produtos com paracetamol.',notas:'Pode usar-se a partir dos 3 meses. Preferir na varicela.',forms:[{label:'Xarope 120 mg/5 ml',conc:24},{label:'Xarope 250 mg/5 ml',conc:50},{label:'Supositório 125 mg',unit:125,tipo:'supos'},{label:'Supositório 250 mg',unit:250,tipo:'supos'},{label:'Comprimido 500 mg',unit:500,tipo:'comp'}]},
-  ibu:{name:'Ibuprofeno',classe:'AINE / Anti-inflamatório',doseKg:10,doseMax:400,doseDiaMgKg:30,doseDiaAbsMax:1200,intervalH:8,dosesMax:3,minKg:7,contra:'Não usar < 6 meses, varicela, asma por AINEs, insuficiência renal/hepática.',notas:'Tomar com alimento. Preferir paracetamol na varicela.',forms:[{label:'Suspensão 100 mg/5 ml',conc:20},{label:'Suspensão 200 mg/5 ml',conc:40},{label:'Comprimido 200 mg',unit:200,tipo:'comp'},{label:'Comprimido 400 mg',unit:400,tipo:'comp'}]},
+  para:{name:'Paracetamol',classe:'Analgésico / Antipirético',doseKg:15,doseMax:1000,doseDiaMgKg:60,doseDiaAbsMax:4000,intervalH:6,dosesMax:4,minKg:3.5,contra:'Insuficiência hepática grave. Não associar a outros produtos com paracetamol.',notas:'Pode usar-se a partir dos 3 meses. Preferir na varicela.',forms:[{label:'Suspensão oral 200 mg/5 ml (40 mg/ml)',conc:40},{label:'Supositório 125 mg',unit:125,tipo:'supos'},{label:'Supositório 250 mg',unit:250,tipo:'supos'},{label:'Comprimido 500 mg',unit:500,tipo:'comp'}]},
+  ibu:{name:'Ibuprofeno',classe:'AINE / Anti-inflamatório',doseKg:10,doseMax:400,doseDiaMgKg:30,doseDiaAbsMax:1200,intervalH:8,dosesMax:3,minKg:7,contra:'Não usar < 6 meses, varicela, asma por AINEs, insuficiência renal/hepática.',notas:'Tomar com alimento. Preferir paracetamol na varicela.',forms:[{label:'Suspensão oral 100 mg/5 ml (20 mg/ml)',conc:20},{label:'Suspensão oral 200 mg/5 ml (40 mg/ml)',conc:40},{label:'Comprimido 200 mg',unit:200,tipo:'comp'},{label:'Comprimido 400 mg',unit:400,tipo:'comp'}]},
   loratra:{name:'Loratadina',classe:'Anti-histamínico 2ª geração',doseFixa:true,minKg:10,intervalH:24,dosesMax:1,contra:'Não usar < 2 anos sem indicação médica.',notas:'Dose única diária. Não provoca sedação significativa.',forms:[{label:'Xarope 1 mg/ml',conc:1},{label:'Comprimido 10 mg',unit:10,tipo:'comp'}],doseCalc:(kg)=>{if(kg<10)return null;return kg<30?{mg:5,nota:'< 30 kg → 5 mg/dia'}:{mg:10,nota:'≥ 30 kg → 10 mg/dia'};}},
   cetiriz:{name:'Cetirizina',classe:'Anti-histamínico 2ª geração',doseFixa:true,minKg:8,intervalH:24,dosesMax:1,contra:'Não usar < 2 anos sem indicação médica. Cautela insuficiência renal.',notas:'Pode causar ligeira sonolência.',forms:[{label:'Gotas 10 mg/ml',conc:10,gotas:true},{label:'Xarope 1 mg/ml',conc:1},{label:'Comprimido 10 mg',unit:10,tipo:'comp'}],doseCalc:(kg,a)=>{a=a||0;if(a>0&&a<2)return{mg:null,nota:'Não recomendado < 2 anos.'};if(kg<8)return null;if(a>=2&&a<6)return{mg:2.5,nota:'2–5 anos: 2.5 mg 2×/dia'};if(kg<30)return{mg:5,nota:'< 30 kg → 5 mg/dia'};return{mg:10,nota:'≥ 30 kg → 10 mg/dia'};}}
 };
