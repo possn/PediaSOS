@@ -154,11 +154,13 @@
       <img src="assets/logo.png" alt="PediaSOS" class="logo-img"/>
     </a>
     <ul class="nav-tabs">
-      <li><a href="index.html" id="t-inicio" class="active">Início</a></li>
-      <li><a href="artigos/" id="t-artigos">Artigos</a></li>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="artigos/">Artigos</a></li>
       <li><a href="primeiros-socorros/">🚨 Emergências</a></li>
-      <li><a href="#" onclick="go('calc');return false;" id="t-calc">Calculadora</a></li>
-      <li><a href="loja/" id="t-loja">Loja</a></li>
+      <li><a href="index.html#calc">Calculadora</a></li>
+      <li><a href="loja/">Loja</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="links/">Links</a></li>
       <li><a href="membros/" class="nav-cta">Membros ★</a></li>
     </ul>
   </div>
@@ -285,7 +287,7 @@
             <div class="drug-tabs">
               <button class="drug-tab active" onclick="setDrug('para',this)">Paracetamol</button>
               <button class="drug-tab" onclick="setDrug('ibu',this)">Ibuprofeno</button>
-              <button class="drug-tab" onclick="setDrug('loratra',this)">Loratadina</button>
+              <button class="drug-tab" onclick="setDrug('deslora',this)">Desloratadina</button>
               <button class="drug-tab" onclick="setDrug('cetiriz',this)">Cetirizina</button>
             </div>
           </div>
@@ -337,7 +339,7 @@
 <footer>
   <div class="foot-inner">
     <img src="assets/logo.png" alt="PediaSOS" style="height:32px;"/>
-    <div class="foot-copy">© 2025 PediaSOS · Dr. Pedro Sampaio Nunes</div>
+    <div class="foot-copy">© 2026 PediaSOS · Dr. Pedro Sampaio Nunes</div>
     <div class="foot-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></div>
     <div class="foot-emerg">Conteúdo educativo. As doenças evoluem — perante novos sintomas ou agravamento, contacte o <strong>SNS 24 (808 24 24 24)</strong> ou o seu médico. Emergência: <strong>112</strong>.</div>
   </div>
@@ -361,7 +363,7 @@ function filterP(cat,btn){
 const DRUGS={
   para:{name:'Paracetamol',classe:'Analgésico / Antipirético',doseKg:15,doseMax:1000,doseDiaMgKg:60,doseDiaAbsMax:4000,intervalH:6,dosesMax:4,minKg:3.5,contra:'Insuficiência hepática grave. Não associar a outros produtos com paracetamol.',notas:'Pode usar-se a partir dos 3 meses. Preferir na varicela.',forms:[{label:'Suspensão oral 200 mg/5 ml (40 mg/ml)',conc:40},{label:'Supositório 125 mg',unit:125,tipo:'supos'},{label:'Supositório 250 mg',unit:250,tipo:'supos'},{label:'Comprimido 500 mg',unit:500,tipo:'comp'}]},
   ibu:{name:'Ibuprofeno',classe:'AINE / Anti-inflamatório',doseKg:10,doseMax:400,doseDiaMgKg:30,doseDiaAbsMax:1200,intervalH:8,dosesMax:3,minKg:7,contra:'Não usar < 6 meses, varicela, asma por AINEs, insuficiência renal/hepática.',notas:'Tomar com alimento. Preferir paracetamol na varicela.',forms:[{label:'Suspensão oral 100 mg/5 ml (20 mg/ml)',conc:20},{label:'Suspensão oral 200 mg/5 ml (40 mg/ml)',conc:40},{label:'Comprimido 200 mg',unit:200,tipo:'comp'},{label:'Comprimido 400 mg',unit:400,tipo:'comp'}]},
-  loratra:{name:'Loratadina',classe:'Anti-histamínico 2ª geração',doseFixa:true,minKg:10,intervalH:24,dosesMax:1,contra:'Não usar < 2 anos sem indicação médica.',notas:'Dose única diária. Não provoca sedação significativa.',forms:[{label:'Xarope 1 mg/ml',conc:1},{label:'Comprimido 10 mg',unit:10,tipo:'comp'}],doseCalc:(kg)=>{if(kg<10)return null;return kg<30?{mg:5,nota:'< 30 kg → 5 mg/dia'}:{mg:10,nota:'≥ 30 kg → 10 mg/dia'};}},
+  deslora:{name:'Desloratadina',classe:'Anti-histamínico 2ª geração (não sedativo)',doseFixa:true,minKg:3,minMeses:6,intervalH:24,dosesMax:1,contra:'Não usar < 6 meses. Intolerância à frutose (contém sorbitol). Insuficiência renal grave.',notas:'Dose única diária. Não provoca sedação. A dose é fixa por faixa etária — não por peso.',forms:[{label:'Solução oral 0,5 mg/ml (Desalex®)',conc:0.5},{label:'Comprimido 5 mg',unit:5,tipo:'comp'}],doseCalc:(kg,idade)=>{const a=idade||0;if(a<0.5)return{mg:null,nota:'Não recomendado < 6 meses.'};if(a<1)return{mg:1,nota:'6–11 meses → 1 mg/dia (2 ml)'};if(a<6)return{mg:1.25,nota:'1–5 anos → 1,25 mg/dia (2,5 ml)'};if(a<12)return{mg:2.5,nota:'6–11 anos → 2,5 mg/dia (5 ml)'};return{mg:5,nota:'≥ 12 anos → 5 mg/dia (10 ml)'};}},
   cetiriz:{name:'Cetirizina',classe:'Anti-histamínico 2ª geração',doseFixa:true,minKg:8,intervalH:24,dosesMax:1,contra:'Não usar < 2 anos sem indicação médica. Cautela insuficiência renal.',notas:'Pode causar ligeira sonolência.',forms:[{label:'Gotas 10 mg/ml',conc:10,gotas:true},{label:'Xarope 1 mg/ml',conc:1},{label:'Comprimido 10 mg',unit:10,tipo:'comp'}],doseCalc:(kg,a)=>{a=a||0;if(a>0&&a<2)return{mg:null,nota:'Não recomendado < 2 anos.'};if(kg<8)return null;if(a>=2&&a<6)return{mg:2.5,nota:'2–5 anos: 2.5 mg 2×/dia'};if(kg<30)return{mg:5,nota:'< 30 kg → 5 mg/dia'};return{mg:10,nota:'≥ 30 kg → 10 mg/dia'};}}
 };
 let aDrug='para';
@@ -386,7 +388,8 @@ function calcular(){
   else{const vol=doseMg/form.conc;doseStr=form.gotas?`${Math.round(vol*2)} gotas (${vol.toFixed(1)} ml)`:`${vol.toFixed(1)} ml`;}
   let doseDia=d.doseFixa?`${doseMg} mg/dia · 1×/dia`:`${Math.round(Math.min(d.doseDiaMgKg*peso,d.doseDiaAbsMax))} mg/dia · ${d.dosesMax}×/dia`;
   if(aDrug==='ibu'&&idade!==null&&idade<1)warnings.push('Ibuprofeno não recomendado < 6 meses sem prescrição.');
-  res.innerHTML=`<div class="res-card"><div class="res-hdr"><div><div class="res-drug-name">${d.name}</div><div class="res-drug-class">${d.classe}</div></div><div class="res-badge">${Math.round(doseMg)} mg</div></div><div class="res-rows"><div class="res-row"><span class="res-lbl">Dose por toma</span><span class="res-val hi">${Math.round(doseMg)} mg</span></div><div class="res-row"><span class="res-lbl">Volume / quantidade</span><span class="res-val">${doseStr}</span></div><div class="res-row"><span class="res-lbl">Intervalo</span><span class="res-val">A cada ${d.intervalH} horas</span></div><div class="res-row"><span class="res-lbl">Máximo diário</span><span class="res-val">${doseDia}</span></div></div>${warnings.map(w=>`<div class="res-warn">⚠️ ${w}</div>`).join('')}${oks.map(o=>`<div class="res-ok">ℹ️ ${o}</div>`).join('')}<div class="res-warn"><strong>Contraindicações:</strong> ${d.contra}</div><div class="res-ok">💡 ${d.notas}</div><div class="res-foot">⚠️ Ferramenta educativa. Confirme com o pediatra. Urgência: <strong>112</strong>.</div></div>`;
+  if(aDrug==='deslora'&&!idade)warnings.push('⚠️ Desloratadina: a dose depende da IDADE, não do peso. Introduza a idade para resultado correcto.');
+  res.innerHTML=`<div class="res-card"><div class="res-hdr"><div><div class="res-drug-name">${d.name}</div><div class="res-drug-class">${d.classe}</div></div><div class="res-badge">${Math.round(doseMg)} mg</div></div><div class="res-rows"><div class="res-row"><span class="res-lbl">Dose por toma</span><span class="res-val hi">${Math.round(doseMg)} mg</span></div><div class="res-row"><span class="res-lbl">Volume / quantidade</span><span class="res-val">${doseStr}</span></div><div class="res-row"><span class="res-lbl">Intervalo</span><span class="res-val">A cada ${d.intervalH} horas</span></div><div class="res-row"><span class="res-lbl">Máximo diário</span><span class="res-val">${doseDia}</span></div></div>${warnings.map(w=>`<div class="res-warn">⚠️ ${w}</div>`).join('')}${oks.map(o=>`<div class="res-ok">ℹ️ ${o}</div>`).join('')}<div class="res-warn"><strong>Contraindicações:</strong> ${d.contra}</div><div class="res-ok">💡 ${d.notas}</div><div class="res-foot">⚠️ Ferramenta educativa. Confirme com o pediatra. Sintomas persistentes: <strong>SNS 24 — 808 24 24 24</strong>. Emergência: <strong>112</strong>.</div></div>`;
 }
 populateForms();
 </script>
