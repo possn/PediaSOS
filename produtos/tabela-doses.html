@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tabela de Doses — Paracetamol e Ibuprofeno | PediaSOS</title>
+  <style>
+    /* ── PRINT OPTIMISED ── */
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm 14mm 12mm;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9pt;
+      color: #1A1410;
+      background: white;
+      line-height: 1.4;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      border-bottom: 2.5px solid #CC785C;
+      margin-bottom: 12px;
+    }
+    .doc-brand { display: flex; align-items: center; gap: 8px; }
+    .doc-brand-name { font-size: 18pt; font-weight: 700; color: #1A1410; letter-spacing: -0.5px; }
+    .doc-brand-name span { color: #CC785C; }
+    .doc-tagline { font-size: 7pt; color: #8C8278; margin-top: 2px; }
+    .doc-meta { text-align: right; font-size: 7pt; color: #8C8278; line-height: 1.6; }
+    .doc-meta strong { color: #1A1410; }
+
+    /* ── TITLE ── */
+    .doc-title {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .doc-title h1 { font-size: 16pt; color: #1A1410; font-weight: 700; margin-bottom: 3px; }
+    .doc-title p { font-size: 8pt; color: #5C5347; }
+
+    /* ── DISCLAIMER BOX ── */
+    .disclaimer {
+      background: #FFF8F5;
+      border: 1.5px solid #E8D5C8;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 14px;
+      font-size: 7.5pt;
+      color: #5C5347;
+      line-height: 1.5;
+    }
+    .disclaimer strong { color: #CC785C; }
+
+    /* ── DRUG SECTION ── */
+    .drug-block { margin-bottom: 16px; page-break-inside: avoid; }
+    .drug-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 6px 6px 0 0;
+      margin-bottom: 0;
+    }
+    .drug-header.para { background: #CC785C; }
+    .drug-header.ibu  { background: #5A7FA0; }
+    .drug-name { font-size: 11pt; font-weight: 700; color: white; }
+    .drug-class { font-size: 7.5pt; color: rgba(255,255,255,0.8); margin-left: auto; }
+
+    .drug-info {
+      background: #F5EDE6;
+      padding: 6px 10px;
+      font-size: 7.5pt;
+      color: #5C5347;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-left: 3px solid #CC785C;
+    }
+    .drug-info.ibu { background: #EDF2F8; border-left-color: #5A7FA0; }
+    .drug-info-item strong { color: #1A1410; }
+
+    /* ── TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+    }
+    thead tr { background: #1A1410; color: white; }
+    thead th {
+      padding: 5px 6px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 7.5pt;
+      letter-spacing: 0.2px;
+    }
+    thead th:first-child { text-align: left; }
+    tbody tr { border-bottom: 1px solid #EAE4DA; }
+    tbody tr:nth-child(even) { background: #FAF8F4; }
+    tbody tr:hover { background: #F5EDE6; }
+    tbody td { padding: 4px 6px; text-align: center; }
+    tbody td:first-child { text-align: left; font-weight: 500; }
+    .td-vol { font-weight: 600; color: #CC785C; }
+    .td-vol.ibu { color: #5A7FA0; }
+    .td-max { font-size: 7pt; color: #8C8278; }
+    .td-warn { background: #FFF0F0 !important; }
+    .td-warn td { color: #8B2020; }
+
+    /* ── CONTRA BOX ── */
+    .contra-box {
+      background: #FFF0F0;
+      border: 1px solid #F5BABA;
+      border-radius: 0 0 6px 6px;
+      padding: 6px 10px;
+      font-size: 7pt;
+      color: #8B2020;
+      line-height: 1.5;
+    }
+    .contra-box strong { font-weight: 700; }
+
+    /* ── SEMAFORO ── */
+    .semaforo {
+      display: flex;
+      gap: 8px;
+      margin: 14px 0;
+      page-break-inside: avoid;
+    }
+    .sem-box {
+      flex: 1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 7.5pt;
+      line-height: 1.5;
+    }
+    .sem-box.verde { background: #F0FFF4; border: 1.5px solid #B8E6C4; }
+    .sem-box.amarelo { background: #FFFBF0; border: 1.5px solid #F5DFA0; }
+    .sem-box.vermelho { background: #FFF0F0; border: 1.5px solid #F5BABA; }
+    .sem-title { font-weight: 700; margin-bottom: 4px; font-size: 8pt; }
+    .sem-box.verde .sem-title { color: #2D6A3F; }
+    .sem-box.amarelo .sem-title { color: #8B6030; }
+    .sem-box.vermelho .sem-title { color: #8B2020; }
+    .sem-box ul { margin-left: 12px; }
+    .sem-box li { margin-bottom: 2px; }
+
+    /* ── DESL TABLE ── */
+    .desl-table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-top: 0; }
+    .desl-table thead tr { background: #3D6B5A; color: white; }
+    .desl-table thead th { padding: 5px 6px; text-align: center; font-size: 7.5pt; }
+    .desl-table thead th:first-child { text-align: left; }
+    .desl-table tbody tr { border-bottom: 1px solid #EAE4DA; }
+    .desl-table tbody tr:nth-child(even) { background: #F0FFF8; }
+    .desl-table tbody td { padding: 4px 6px; text-align: center; }
+    .desl-table tbody td:first-child { text-align: left; font-weight: 500; }
+    .drug-header.desl { background: #3D6B5A; }
+    .drug-info.desl { background: #EDF5F1; border-left-color: #3D6B5A; }
+    .td-vol.desl { color: #3D6B5A; }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 14px;
+      padding-top: 8px;
+      border-top: 1px solid #DDD7CC;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.5pt;
+      color: #8C8278;
+    }
+    .doc-footer strong { color: #CC785C; }
+
+    /* ── PRINT BUTTON (web only) ── */
+    .print-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 32px;
+      background: #CC785C;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .print-btn:hover { background: #B8664A; }
+    @media print { .print-btn { display: none; } }
+    @media screen { body { padding: 20px; max-width: 800px; margin: 0 auto; } }
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-brand">
+    <div>
+      <div class="doc-brand-name">Pedia<span>SOS</span></div>
+      <div class="doc-tagline">Conteúdos que cuidam. Conhecimento que salva.</div>
+    </div>
+  </div>
+  <div class="doc-meta">
+    <strong>Tabela de Doses Pediátricas</strong><br>
+    Paracetamol · Ibuprofeno · Desloratadina<br>
+    Versão 2026 · pediasos.org<br>
+    Dr. Pedro Sampaio Nunes — Médico Pediatra
+  </div>
+</div>
+
+<!-- TITLE -->
+<div class="doc-title">
+  <h1>Doses de Analgésicos e Anti-histamínico</h1>
+  <p>Concentrações disponíveis em Portugal · Peso 3–60 kg · ERC 2025 / SPP</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <strong>⚠️ Ferramenta educativa.</strong> Confirme sempre com o pediatra ou farmacêutico. As doses são para crianças saudáveis sem comorbilidades. Perante agravamento ou novos sintomas: <strong>SNS 24 — 808 24 24 24</strong>. Emergência: <strong>112</strong>. As doenças evoluem — reavalie sempre o doente.
+</div>
+
+<!-- PARACETAMOL -->
+<div class="drug-block">
+  <div class="drug-header para">
+    <div class="drug-name">🌡️ Paracetamol</div>
+    <div class="drug-class">Analgésico / Antipirético · Dose: 15 mg/kg · Máx. 1000 mg/dose · Intervalo: 6h · Máx. 4 doses/dia</div>
+  </div>
+  <div class="drug-info">
+    <span><strong>Suspensão oral Portugal:</strong> 200 mg/5 ml = 40 mg/ml (Ben-u-ron® e genéricos)</span>
+    <span><strong>Fórmula:</strong> Volume (ml) = Peso (kg) × 15 ÷ 40</span>
+    <span><strong>Mínimo:</strong> 3,5 kg · ≥3 meses</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Peso</th>
+        <th>Dose (mg)</th>
+        <th>Suspensão 40mg/ml (ml)</th>
+        <th>Supositório</th>
+        <th>Comprimido</th>
+        <th>Máx. diário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>3–4 kg</td><td>52–60 mg</td><td class="td-vol">2,0 ml</td><td>½ sup 125mg</td><td>—</td><td class="td-max">240 mg</td></tr>
+      <tr><td>5–6 kg</td><td>75–90 mg</td><td class="td-vol">2,5 ml</td><td>½–¾ sup 125mg</td><td>—</td><td class="td-max">360 mg</td></tr>
+      <tr><td>7–8 kg</td><td>105–120 mg</td><td class="td-vol">3,0 ml</td><td>1 sup 125mg</td><td>—</td><td class="td-max">480 mg</td></tr>
+      <tr><td>9–10 kg</td><td>135–150 mg</td><td class="td-vol">3,8 ml</td><td>1 sup 125mg</td><td>—</td><td class="td-max">600 mg</td></tr>
+      <tr><td>11–12 kg</td><td>165–180 mg</td><td class="td-vol">4,5 ml</td><td>1½ sup 125mg</td><td>—</td><td class="td-max">720 mg</td></tr>
+      <tr><td>13–15 kg</td><td>195–225 mg</td><td class="td-vol">5,5 ml</td><td>1 sup 250mg</td><td>—</td><td class="td-max">900 mg</td></tr>
+      <tr><td>16–18 kg</td><td>240–270 mg</td><td class="td-vol">6,5 ml</td><td>1 sup 250mg</td><td>—</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>19–22 kg</td><td>285–330 mg</td><td class="td-vol">8,0 ml</td><td>1 sup 250mg</td><td>—</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>23–26 kg</td><td>345–390 mg</td><td class="td-vol">9,5 ml</td><td>1½ sup 250mg</td><td>—</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>27–33 kg</td><td>405–495 mg</td><td class="td-vol">11,0 ml</td><td>2 sup 250mg</td><td>1 comp 500mg</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>34–40 kg</td><td>510–600 mg</td><td class="td-vol">14,0 ml</td><td>2 sup 250mg</td><td>1 comp 500mg</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>41–50 kg</td><td>615–750 mg</td><td class="td-vol">17,5 ml</td><td>—</td><td>1½ comp 500mg</td><td class="td-max">1000 mg</td></tr>
+      <tr><td>≥ 51 kg</td><td colspan="4" style="text-align:center;color:#8C8278;">Dose adulto — 1000 mg/dose (1 comp 1g)</td><td class="td-max">4000 mg</td></tr>
+    </tbody>
+  </table>
+  <div class="contra-box">
+    <strong>⚠️ Não usar se:</strong> insuficiência hepática grave · já a tomar outro produto com paracetamol (Griponal®, Beechams®, etc.) — risco de sobredosagem. <strong>Varicela: preferir SEMPRE ao ibuprofeno.</strong>
+  </div>
+</div>
+
+<!-- IBUPROFENO -->
+<div class="drug-block">
+  <div class="drug-header ibu">
+    <div class="drug-name">💊 Ibuprofeno</div>
+    <div class="drug-class">AINE / Antipirético · Dose: 10 mg/kg · Máx. 400 mg/dose · Intervalo: 8h · Máx. 3 doses/dia · Tomar com alimento</div>
+  </div>
+  <div class="drug-info ibu">
+    <span><strong>Suspensão 20mg/ml:</strong> 100mg/5ml (Nurofen® 100mg/5ml e genéricos)</span>
+    <span><strong>Suspensão 40mg/ml:</strong> 200mg/5ml (Nurofen® 200mg/5ml e genéricos)</span>
+    <span><strong>Mínimo:</strong> 7 kg · ≥ 6 meses</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Peso</th>
+        <th>Dose (mg)</th>
+        <th>Susp. 20mg/ml (ml)</th>
+        <th>Susp. 40mg/ml (ml)</th>
+        <th>Comprimido</th>
+        <th>Máx. diário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="td-warn"><td>3–6 kg</td><td colspan="4" style="text-align:center;">⚠️ Não recomendado &lt; 6 meses e &lt; 7 kg — consulte o pediatra</td><td>—</td></tr>
+      <tr><td>7–9 kg</td><td>70–90 mg</td><td class="td-vol ibu">4,0 ml</td><td class="td-vol ibu">2,0 ml</td><td>—</td><td class="td-max">270 mg</td></tr>
+      <tr><td>10–12 kg</td><td>100–120 mg</td><td class="td-vol ibu">5,5 ml</td><td class="td-vol ibu">2,8 ml</td><td>—</td><td class="td-max">360 mg</td></tr>
+      <tr><td>13–15 kg</td><td>130–150 mg</td><td class="td-vol ibu">7,0 ml</td><td class="td-vol ibu">3,5 ml</td><td>—</td><td class="td-max">450 mg</td></tr>
+      <tr><td>16–20 kg</td><td>160–200 mg</td><td class="td-vol ibu">9,0 ml</td><td class="td-vol ibu">4,5 ml</td><td>—</td><td class="td-max">600 mg</td></tr>
+      <tr><td>21–25 kg</td><td>210–250 mg</td><td class="td-vol ibu">11,5 ml</td><td class="td-vol ibu">5,8 ml</td><td>—</td><td class="td-max">750 mg</td></tr>
+      <tr><td>26–30 kg</td><td>260–300 mg</td><td class="td-vol ibu">14,0 ml</td><td class="td-vol ibu">7,0 ml</td><td>1 comp 200mg</td><td class="td-max">900 mg</td></tr>
+      <tr><td>31–39 kg</td><td>310–390 mg</td><td class="td-vol ibu">17,5 ml</td><td class="td-vol ibu">8,8 ml</td><td>2 comp 200mg</td><td class="td-max">1200 mg</td></tr>
+      <tr><td>≥ 40 kg</td><td>400 mg</td><td class="td-vol ibu">20,0 ml</td><td class="td-vol ibu">10,0 ml</td><td>1 comp 400mg</td><td class="td-max">1200 mg</td></tr>
+    </tbody>
+  </table>
+  <div class="contra-box" style="border-color:#B8D4F0;background:#EDF2F8;color:#1A3A6A;">
+    <strong>🚫 NUNCA usar se:</strong> &lt; 6 meses · varicela (risco de fasceíte necrosante) · asma por AINEs · desidratação/diarreia intensa · insuficiência renal ou hepática · dengue ou suspeita de infecção hemorrágica. <strong>Tomar sempre com alimento.</strong>
+  </div>
+</div>
+
+<!-- DESLORATADINA -->
+<div class="drug-block">
+  <div class="drug-header desl">
+    <div class="drug-name">🌸 Desloratadina</div>
+    <div class="drug-class">Anti-histamínico 2ª geração · Dose fixa por IDADE (não por peso) · 1× dia · Não provoca sedação</div>
+  </div>
+  <div class="drug-info desl">
+    <span><strong>Solução oral Portugal:</strong> 0,5 mg/ml (Desalex® e genéricos)</span>
+    <span><strong>Mínimo:</strong> ≥ 6 meses</span>
+    <span><strong>Nota:</strong> dose NÃO depende do peso — depende da idade</span>
+  </div>
+  <table class="desl-table">
+    <thead>
+      <tr>
+        <th>Idade</th>
+        <th>Dose (mg/dia)</th>
+        <th>Solução 0,5mg/ml (ml)</th>
+        <th>Comprimido 5mg</th>
+        <th>Frequência</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>6–11 meses</td><td class="td-vol desl">1 mg</td><td class="td-vol desl">2,0 ml</td><td>—</td><td>1× dia</td></tr>
+      <tr><td>1–5 anos</td><td class="td-vol desl">1,25 mg</td><td class="td-vol desl">2,5 ml</td><td>—</td><td>1× dia</td></tr>
+      <tr><td>6–11 anos</td><td class="td-vol desl">2,5 mg</td><td class="td-vol desl">5,0 ml</td><td>½ comp</td><td>1× dia</td></tr>
+      <tr><td>≥ 12 anos</td><td class="td-vol desl">5 mg</td><td class="td-vol desl">10,0 ml</td><td>1 comp</td><td>1× dia</td></tr>
+    </tbody>
+  </table>
+  <div class="contra-box" style="border-color:#B8D8C4;background:#EDF5F1;color:#1A4A30;">
+    <strong>Contraindicações:</strong> &lt; 6 meses · intolerância à frutose (contém sorbitol) · insuficiência renal grave. <strong>Indicações:</strong> rinite alérgica, urticária. Não usar para febre — sem efeito antipirético.
+  </div>
+</div>
+
+<!-- SEMAFORO FEBRE -->
+<div style="page-break-inside: avoid;">
+  <div style="font-size:9pt;font-weight:700;color:#1A1410;margin-bottom:8px;">🚦 Semáforo da Febre — referência rápida</div>
+  <div class="semaforo">
+    <div class="sem-box verde">
+      <div class="sem-title">🟢 Em casa</div>
+      <ul>
+        <li>&gt;6 meses, temp &lt;39°C</li>
+        <li>Activa, consolável</li>
+        <li>Come e bebe</li>
+        <li>Cede ao antipirético</li>
+      </ul>
+    </div>
+    <div class="sem-box amarelo">
+      <div class="sem-title">🟡 Contactar médico</div>
+      <ul>
+        <li>Febre &gt;48–72h sem melhoria</li>
+        <li>≥39°C resistente</li>
+        <li>Choro persistente</li>
+        <li>Recusa líquidos</li>
+      </ul>
+    </div>
+    <div class="sem-box vermelho">
+      <div class="sem-title">🔴 Urgência imediata</div>
+      <ul>
+        <li><strong>Qualquer febre &lt;3 meses</strong></li>
+        <li>Petéquias/manchas roxas</li>
+        <li>Dificuldade respiratória</li>
+        <li>Difícil de acordar</li>
+        <li>Convulsão · Rigidez nuca</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>© 2026 PediaSOS · Dr. Pedro Sampaio Nunes · Médico Pediatra e Intensivista Pediátrico · Formador Certificado SBV/SAV</div>
+  <div>pediasos.org · info@pediasos.org · <strong>SNS 24: 808 24 24 24 · Emergência: 112</strong></div>
+</div>
+
+</body>
+</html>
