@@ -28,7 +28,6 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);back
 .nav-tabs a:hover,.nav-tabs a.active{background:var(--mist);color:var(--ink);font-weight:600}
 .nav-cta{background:var(--terracotta)!important;color:white!important;padding:8px 16px!important;border-radius:100px!important;margin-left:8px}
 .nav-cta:hover{background:var(--terra-hover)!important}
-.nav-menu-btn{display:none}
 
 /* ── MOBILE NAV BOTTOM BAR ── */
 .mob-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(242,237,228,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--sand-border);padding:6px 0 env(safe-area-inset-bottom,6px)}
@@ -54,7 +53,7 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);back
 .drawer-divider{height:1px;background:var(--sand-border);margin:8px 24px}
 .drawer-cta{margin:16px 24px 8px;display:block;padding:13px 20px;background:var(--terracotta);color:white;border-radius:12px;text-align:center;text-decoration:none;font-size:14px;font-weight:600;transition:var(--t)}
 .drawer-cta:hover{background:var(--terra-hover)}
-.nav-menu-btn{display:none;width:40px;height:40px;border-radius:10px;border:1.5px solid var(--sand-border);background:transparent;font-size:18px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;transition:var(--t);flex-shrink:0}
+.nav-menu-btn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--sand-border);background:transparent;font-size:18px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center;transition:var(--t);flex-shrink:0}
 .nav-menu-btn:hover{background:var(--mist)}
 
 /* CONTAINER */
@@ -118,8 +117,7 @@ footer{border-top:1px solid var(--sand-border);padding:36px 0;background:var(--w
 @media(min-width:1025px){
   .nav-tabs{display:flex}
   .mob-nav{display:none}
-  .nav-menu-btn{display:none}
-  .container{max-width:1400px}
+    .container{max-width:1400px}
   body{padding-bottom:0}
 }
 
