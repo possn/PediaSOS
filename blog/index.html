@@ -34,28 +34,53 @@
 
 <nav class="top">
   <div class="nav-inner">
-    <a class="nav-logo" href="../index.html"><img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/></a>
+    <a class="nav-logo" href="../index.html">
+      <img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/>
+    </a>
     <ul class="nav-tabs">
-      <li><a href="../index.html">Início</a></li>
-      <li><a href="../artigos/">Artigos</a></li>
-      <li><a href="../primeiros-socorros/">🚨 Emergências</a></li>
-      <li><a href="../index.html#calc">Calculadora</a></li>
-      <li><a href="../loja/">Loja</a></li>
-      <li><a href="../blog/">Blog</a></li>
-      <li><a href="../links/">Links</a></li>
+      <li><a href="../index.html" id="t-inicio">Início</a></li>
+      <li><a href="../artigos/" id="t-artigos">Artigos</a></li>
+      <li><a href="../primeiros-socorros/" id="t-ps">Emergências</a></li>
+      <li><a href="../index.html#calc" id="t-calc">Calculadora</a></li>
+      <li><a href="../loja/" id="t-loja">Loja</a></li>
+      <li><a href="../blog/" id="t-blog">Blog</a></li>
+      <li><a href="../links/" id="t-links">Links</a></li>
       <li><a href="../membros/" class="nav-cta">Membros ★</a></li>
     </ul>
+    <button class="nav-menu-btn" onclick="openDrawer()" aria-label="Menu">☰</button>
   </div>
 </nav>
+
+<!-- MOBILE BOTTOM NAV -->
 <nav class="mob-nav">
   <div class="mob-nav-inner">
-    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
-    <a class="mob-tab" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
-    <a class="mob-tab" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
-    <a class="mob-tab" href="../index.html#calc"><span class="mob-tab-ico">⚖️</span>Doses</a>
-    <a class="mob-tab" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
+    <a class="mob-tab" id="m-inicio" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab" id="m-artigos" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" id="m-ps" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" id="m-blog" href="../blog/"><span class="mob-tab-ico">✍️</span>Blog</a>
+    <a class="mob-tab" id="m-loja" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
+    <button class="mob-tab" onclick="openDrawer()" aria-label="Mais"><span class="mob-tab-ico">☰</span>Mais</button>
   </div>
 </nav>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="../assets/logo.png" alt="PediaSOS" class="drawer-logo"/>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-nav">
+        <a class="drawer-link" href="../index.html" id="d-inicio"><span class="drawer-link-ico">🏠</span>Início</a>
+        <a class="drawer-link" href="../artigos/" id="d-artigos"><span class="drawer-link-ico">📰</span>Artigos</a>
+        <a class="drawer-link" href="../primeiros-socorros/" id="d-ps"><span class="drawer-link-ico">🚨</span>Emergências</a>
+        <a class="drawer-link" href="../index.html#calc" id="d-calc"><span class="drawer-link-ico">⚖️</span>Calculadora</a>
+        <a class="drawer-link" href="../loja/" id="d-loja"><span class="drawer-link-ico">🛍️</span>Loja</a>
+        <a class="drawer-link" href="../blog/" id="d-blog"><span class="drawer-link-ico">✍️</span>Blog</a>
+        <a class="drawer-link" href="../links/" id="d-links"><span class="drawer-link-ico">🔗</span>Links</a>
+    <div class="drawer-divider"></div>
+    <a class="drawer-link" href="../links/"><span class="drawer-link-ico">🔗</span>Links úteis</a>
+    <a class="drawer-cta" href="../membros/">Membros ★ — Ver planos</a>
+  </div>
+</div>
 
 <main style="padding-top:var(--nav-h);">
   <div class="container">
@@ -110,5 +135,18 @@
   </div>
 </footer>
 <script src="../assets/main.js"></script>
+<script>
+function openDrawer(){
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
 </body>
 </html>
