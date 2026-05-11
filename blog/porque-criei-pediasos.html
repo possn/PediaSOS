@@ -23,6 +23,26 @@
     .blog-content h2{font-family:'DM Serif Display',serif;font-size:24px;color:var(--ink);margin:36px 0 14px;line-height:1.2}
     .blog-pull{font-family:'DM Serif Display',serif;font-size:22px;color:var(--terracotta);line-height:1.4;padding:24px 28px;border-left:3px solid var(--terracotta);margin:32px 0;font-style:italic}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Porque criei o PediaSOS",
+    "description": "Porque criei o PediaSOS — a história por trás do projecto. Por Dr. Pedro Sampaio Nunes, médico pediatra e intensivista.",
+    "url": "https://www.pediasos.org/blog/porque-criei-pediasos.html",
+    "datePublished": "2026-01-01",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Pedro Sampaio Nunes",
+      "jobTitle": "Médico Pediatra e Intensivista Pediátrico"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PediaSOS",
+      "url": "https://www.pediasos.org"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -78,6 +98,8 @@
 
 <main style="padding-top:var(--nav-h);">
   <div class="article-wrap">
+        <a class="back-btn" href="../blog/"><span class="back-btn-ico">←</span> Blog</a>
+          
 
     <div class="article-header">
       <div class="stag">Bastidores · 5 min leitura</div>
@@ -128,6 +150,16 @@
 
     </div>
 
+    <div class="newsletter-box">
+      <h3>Novos artigos por email</h3>
+      <p>Um artigo por semana. Sem spam. Cancele quando quiser.</p>
+      <form id="nl-form" class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input id="nl-email" class="newsletter-input" type="email" placeholder="o-seu-email@exemplo.com" autocomplete="email"/>
+        <button id="nl-btn" class="newsletter-btn" type="submit">Subscrever →</button>
+      </form>
+      <div id="nl-success" class="newsletter-success">✓ Obrigado! Receberá o próximo artigo por email.</div>
+      <p class="newsletter-note">Sem spam · Sem partilha de dados · RGPD</p>
+    </div>
     <div style="margin-top:48px;padding:24px;background:var(--white);border-radius:16px;border:1px solid var(--sand-border);display:flex;gap:18px;align-items:center;">
       <img src="../assets/logo.png" alt="PediaSOS" style="width:56px;height:56px;border-radius:50%;object-fit:contain;background:var(--sand);padding:6px;"/>
       <div>
