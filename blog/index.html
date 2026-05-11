@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#CC785C"/>
+  <meta name="description" content="Blog do PediaSOS — reflexões clínicas, novidades da medicina pediátrica e bastidores do projecto. Por Dr. Pedro Sampaio Nunes."/>
+  <meta property="og:title" content="Blog | PediaSOS"/>
+  <meta property="og:image" content="https://www.pediasos.org/assets/og-image.png"/>
+  <meta property="og:site_name" content="PediaSOS"/>
+  <title>Blog | PediaSOS</title>
+  <link rel="manifest" href="../manifest.json"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/style.css"/>
+  <style>
+    @media(max-width:768px){body{padding-bottom:80px;}}
+    .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-bottom:72px}
+    @media(max-width:700px){.blog-grid{grid-template-columns:1fr}}
+    .blog-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--sand-border);overflow:hidden;transition:var(--t);text-decoration:none;display:block}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+    .blog-thumb{aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;font-size:48px}
+    .blog-body{padding:20px 22px 24px}
+    .blog-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .blog-cat{font-size:10px;font-weight:700;color:var(--terracotta);text-transform:uppercase;letter-spacing:.7px}
+    .blog-date{font-size:11px;color:var(--slate-lt)}
+    .blog-title{font-family:'DM Serif Display',serif;font-size:20px;line-height:1.3;color:var(--ink);margin-bottom:10px}
+    .blog-exc{font-size:13px;color:var(--slate);line-height:1.6;font-weight:300}
+    .blog-read{margin-top:14px;font-size:12px;color:var(--terracotta);font-weight:500}
+    .blog-tag{display:inline-block;padding:3px 10px;border-radius:100px;background:var(--tag-bg);border:1px solid var(--tag-border);font-size:11px;color:var(--slate);margin-right:4px;margin-top:8px}
+  </style>
+</head>
+<body>
 
+<nav class="top">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html"><img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/></a>
+    <ul class="nav-tabs">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../artigos/">Artigos</a></li>
+      <li><a href="../primeiros-socorros/">🚨 Emergências</a></li>
+      <li><a href="../index.html#calc">Calculadora</a></li>
+      <li><a href="../loja/">Loja</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../links/">Links</a></li>
+      <li><a href="../membros/" class="nav-cta">Membros ★</a></li>
+    </ul>
+  </div>
+</nav>
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" href="../index.html#calc"><span class="mob-tab-ico">⚖️</span>Doses</a>
+    <a class="mob-tab" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
+  </div>
+</nav>
+
+<main style="padding-top:var(--nav-h);">
+  <div class="container">
+    <div style="padding:48px 0 36px;">
+      <div class="stag">Blog</div>
+      <h1 class="stitle">Reflexões de um<br>pediatra <em>no terreno</em></h1>
+      <p style="font-size:16px;color:var(--slate);font-weight:300;max-width:560px;">Menos guia, mais conversa. Novidades da medicina pediátrica, casos que me fizeram pensar, e o que vai sendo o PediaSOS.</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <a class="blog-card" href="urgencia-de-madrugada.html">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#1A1410,#3D2A20);">🌙</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Reflexão clínica</span>
+            <span class="blog-date">Maio 2026</span>
+          </div>
+          <div class="blog-title">A urgência de madrugada e o pai que sabia demasiado</div>
+          <div class="blog-exc">Uma consulta às 3h da manhã, um pai com o telemóvel cheio de pesquisas, e o que aprendi sobre a diferença entre informação e conhecimento.</div>
+          <span class="blog-tag">Urgência</span>
+          <span class="blog-tag">Pais informados</span>
+          <div class="blog-read">Ler → 4 min</div>
+        </div>
+      </a>
+
+      <a class="blog-card" href="porque-criei-pediasos.html">
+        <div class="blog-thumb" style="background:linear-gradient(135deg,#CC785C,#A85A40);">💡</div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span class="blog-cat">Bastidores</span>
+            <span class="blog-date">Janeiro 2026</span>
+          </div>
+          <div class="blog-title">Porque criei o PediaSOS — e porque demorei tanto</div>
+          <div class="blog-exc">20 anos a responder às mesmas perguntas na urgência. Uma noite, decidi escrever as respostas de uma vez por todas.</div>
+          <span class="blog-tag">PediaSOS</span>
+          <span class="blog-tag">Origem</span>
+          <div class="blog-read">Ler → 5 min</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <img src="../assets/logo.png" alt="PediaSOS" style="height:32px;"/>
+    <div class="foot-copy">© 2026 PediaSOS · Dr. Pedro Sampaio Nunes</div>
+    <div class="foot-links"><a href="../privacidade.html">Privacidade</a><a href="../termos.html">Termos</a></div>
+    <div class="foot-emerg">Conteúdo educativo. As doenças evoluem — perante novos sintomas ou agravamento, contacte o <strong>SNS 24 (808 24 24 24)</strong> ou o seu médico. Emergência: <strong>112</strong>.</div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
