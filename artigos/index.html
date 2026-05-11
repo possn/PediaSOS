@@ -2,50 +2,143 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Artigos — PediaSOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#CC785C"/>
+  <meta name="description" content="Artigos pediátricos baseados em evidência — febre, medicação, respiratório, vacinas, otite, alergias, convulsão e RCP. Por Dr. Pedro Sampaio Nunes."/>
+  <meta property="og:title" content="Artigos | PediaSOS"/>
+  <meta property="og:image" content="https://www.pediasos.org/assets/og-image.png"/>
+  <meta property="og:site_name" content="PediaSOS"/>
+  <title>Artigos | PediaSOS</title>
+  <link rel="manifest" href="../manifest.json"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/style.css"/>
-<style>@media(max-width:768px){body{padding-bottom:80px;}}</style>
+  <style>@media(max-width:768px){body{padding-bottom:80px;}}</style>
 </head>
 <body>
+
 <nav class="top">
   <div class="nav-inner">
-    <a class="nav-logo" href="../index.html"><img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/></a>
+    <a class="nav-logo" href="/index.html"><img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/></a>
     <ul class="nav-tabs">
-      <li><a href="../index.html">Início</a></li>
-      <li><a href="index.html" class="active">Artigos</a></li>
-      <li><a href="../index.html">Calculadora</a></li>
-      <li><a href="../loja/">Loja</a></li>
-      <li><a href="../index.html" class="nav-cta">Contacto</a></li>
+      <li><a href="/index.html">Início</a></li>
+      <li><a href="/artigos/" class="active">Artigos</a></li>
+      <li><a href="/primeiros-socorros/">🚨 Emergências</a></li>
+      <li><a href="/index.html#calc">Calculadora</a></li>
+      <li><a href="/loja/">Loja</a></li>
+      <li><a href="/membros/" class="nav-cta">Membros ★</a></li>
     </ul>
   </div>
 </nav>
 <nav class="mob-nav">
   <div class="mob-nav-inner">
-    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
-    <a class="mob-tab active" href="index.html"><span class="mob-tab-ico">📰</span>Artigos</a>
-    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">⚖️</span>Doses</a>
-    <a class="mob-tab" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
-    <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">👤</span>Sobre</a>
+    <a class="mob-tab" href="/index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab active" href="/artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" href="/primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" href="/index.html#calc"><span class="mob-tab-ico">⚖️</span>Doses</a>
+    <a class="mob-tab" href="/loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
   </div>
 </nav>
+
 <main style="padding-top:var(--nav-h);">
   <div class="container">
     <div class="sec-hdr">
-      <div><div class="stag">Biblioteca</div><h1 class="stitle" style="margin-bottom:0;">Artigos <em>rigorosos</em><br>para pais informados</h1></div>
+      <div>
+        <div class="stag">Biblioteca</div>
+        <h1 class="stitle" style="margin-bottom:0;">Artigos <em>rigorosos</em><br>para pais informados</h1>
+      </div>
     </div>
-    <div class="art-grid">
-      <a class="art-card" href="febre.html"><div class="art-thumb" style="background:linear-gradient(135deg,#FFE8DC,#FFCFB8);">🌡️</div><div class="art-body"><div class="art-cat">Urgência</div><div class="art-title">Febre na criança — quando ir ao Urgência?</div><div class="art-exc">Sinais de alarme e quando agir com segurança.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">Ler →</span></div></div></a>
-      <a class="art-card" href="respiratorio.html"><div class="art-thumb" style="background:linear-gradient(135deg,#F5E8D8,#EDD4B8);">🫁</div><div class="art-body"><div class="art-cat">Respiratório</div><div class="art-title">Sinais de dificuldade respiratória que não pode ignorar</div><div class="art-exc">Como reconhecer quando a respiração é preocupante.</div><div class="art-foot"><span class="art-date">Abr 2025</span><span class="art-read">Ler →</span></div></div></a>
-      <a class="art-card" href="medicacao.html"><div class="art-thumb" style="background:linear-gradient(135deg,#FDECD8,#FAD8B0);">💊</div><div class="art-body"><div class="art-cat">Medicação</div><div class="art-title">Paracetamol ou Ibuprofeno — o guia definitivo</div><div class="art-exc">Dosagem, intervalos e quando NÃO usar cada um.</div><div class="art-foot"><span class="art-date">Mar 2025</span><span class="art-read">Ler →</span></div></div></a>
-      <a class="art-card" href="convulsao.html"><div class="art-thumb" style="background:linear-gradient(135deg,#EDE0F8,#D8C8F0);">⚡</div><div class="art-body"><div class="art-cat">Urgência</div><div class="art-title">Convulsão febril — o que fazer</div><div class="art-exc">O que fazer, o que nunca fazer, e quando ir ao Urgência.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">Ler →</span></div></div></a>
-      <a class="art-card" href="rcp.html"><div class="art-thumb" style="background:linear-gradient(135deg,#FFE0DC,#FFC8C0);">🫀</div><div class="art-body"><div class="art-cat">Primeiros Socorros</div><div class="art-title">RCP em bebés e crianças — guia passo a passo</div><div class="art-exc">Como fazer reanimação cardiopulmonar e desobstrução da via aérea.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">Ler →</span></div></div></a>
+
+    <div class="art-search">
+      <span class="art-search-ico">🔍</span>
+      <input type="text" id="search-input" placeholder="Pesquisar artigos..." oninput="filterArticles(this.value)"/>
     </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;">
+      <button class="filter-btn active" onclick="filterCat('todos',this)">Todos</button>
+      <button class="filter-btn" onclick="filterCat('urgencia',this)">Urgência</button>
+      <button class="filter-btn" onclick="filterCat('medicacao',this)">Medicação</button>
+      <button class="filter-btn" onclick="filterCat('prevencao',this)">Prevenção</button>
+      <button class="filter-btn" onclick="filterCat('infecao',this)">Infecções</button>
+    </div>
+
+    <div class="art-grid" id="art-grid">
+      <a class="art-card" href="febre.html" data-cat="urgencia" data-tags="febre temperatura urgencia termometro">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#FFE8DC,#FFCFB8);">🌡️</div>
+        <div class="art-body"><div class="art-cat">Urgência</div><div class="art-title">Febre na criança — quando ir ao Urgência?</div><div class="art-exc">Sinais de alarme e quando agir com segurança.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">5 min →</span></div></div>
+      </a>
+      <a class="art-card" href="respiratorio.html" data-cat="urgencia" data-tags="respiracao dificuldade respiratoria pieira tiragem">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#F5E8D8,#EDD4B8);">🫁</div>
+        <div class="art-body"><div class="art-cat">Respiratório</div><div class="art-title">Sinais de dificuldade respiratória que não pode ignorar</div><div class="art-exc">Como reconhecer quando a respiração é preocupante.</div><div class="art-foot"><span class="art-date">Abr 2025</span><span class="art-read">7 min →</span></div></div>
+      </a>
+      <a class="art-card" href="medicacao.html" data-cat="medicacao" data-tags="paracetamol ibuprofeno dose antipiretico">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#FDECD8,#FAD8B0);">💊</div>
+        <div class="art-body"><div class="art-cat">Medicação</div><div class="art-title">Paracetamol ou Ibuprofeno — o guia definitivo</div><div class="art-exc">Dosagem, intervalos e quando NÃO usar cada um.</div><div class="art-foot"><span class="art-date">Mar 2025</span><span class="art-read">4 min →</span></div></div>
+      </a>
+      <a class="art-card" href="convulsao.html" data-cat="urgencia" data-tags="convulsao epilepsia febril crise">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#EDE0F8,#D8C8F0);">⚡</div>
+        <div class="art-body"><div class="art-cat">Urgência</div><div class="art-title">Convulsão febril — o que fazer</div><div class="art-exc">O que fazer, o que nunca fazer, e quando ir ao Urgência.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">5 min →</span></div></div>
+      </a>
+      <a class="art-card" href="rcp.html" data-cat="urgencia" data-tags="rcp reanimacao sbv sav engasgamento">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#FFE0DC,#FFC8C0);">🫀</div>
+        <div class="art-body"><div class="art-cat">Primeiros Socorros</div><div class="art-title">RCP em bebés e crianças — guia passo a passo</div><div class="art-exc">Reanimação cardiopulmonar e desobstrução da via aérea.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">8 min →</span></div></div>
+      </a>
+      <a class="art-card" href="vacinas.html" data-cat="prevencao" data-tags="vacinas calendario pnv vacinacao reacoes">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#E8F4FD,#C8E4F8);">💉</div>
+        <div class="art-body"><div class="art-cat">Prevenção</div><div class="art-title">Calendário Vacinal 2025 — o que esperar em cada idade</div><div class="art-exc">PNV completo, reacções normais e quando preocupar.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">6 min →</span></div></div>
+      </a>
+      <a class="art-card" href="otite.html" data-cat="infecao" data-tags="otite ouvido antibiotico infeccao dor">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#FFF5DC,#FFE8A8);">👂</div>
+        <div class="art-body"><div class="art-cat">Infecções</div><div class="art-title">Otite na criança — antibiótico sim ou não?</div><div class="art-exc">Quando tratar com antibiótico e quando não. Fluxograma de decisão.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">5 min →</span></div></div>
+      </a>
+      <a class="art-card" href="alergias.html" data-cat="urgencia" data-tags="alergia anafilaxia urticaria adrenalina epipen">
+        <div class="art-thumb" style="background:linear-gradient(135deg,#FFE8E8,#FFD0D0);">🐝</div>
+        <div class="art-body"><div class="art-cat">Urgência</div><div class="art-title">Alergias na criança — da urticária à anafilaxia</div><div class="art-exc">Reconhecer gravidade e actuar antes que seja tarde.</div><div class="art-foot"><span class="art-date">Mai 2025</span><span class="art-read">6 min →</span></div></div>
+      </a>
+    </div>
+
+    <div id="no-results" style="display:none;text-align:center;padding:48px;color:var(--slate-lt);">
+      <div style="font-size:40px;margin-bottom:12px;">🔍</div>
+      <div style="font-size:15px;">Nenhum artigo encontrado para "<span id="search-term"></span>"</div>
+    </div>
+
   </div>
 </main>
-<footer><div class="foot-inner"><img src="../assets/logo.png" alt="PediaSOS" style="height:32px;"/><div class="foot-copy">© 2025 PediaSOS · Dr. Pedro Sampaio Nunes</div><div class="foot-links"><a href="#">Privacidade</a></div><div class="foot-emerg">Conteúdo educativo. Em emergência ligue <strong>112</strong>.</div></div></footer>
+
+<footer>
+  <div class="foot-inner">
+    <img src="../assets/logo.png" alt="PediaSOS" style="height:32px;"/>
+    <div class="foot-copy">© 2025 PediaSOS · Dr. Pedro Sampaio Nunes</div>
+    <div class="foot-links"><a href="#">Privacidade</a><a href="#">Termos</a></div>
+    <div class="foot-emerg">Conteúdo educativo. Não substitui consulta médica. Em emergência ligue <strong>112</strong>.</div>
+  </div>
+</footer>
 <script src="../assets/main.js"></script>
+<script>
+let activeCat = 'todos';
+
+function filterArticles(q) {
+  const cards = document.querySelectorAll('.art-card');
+  const term = q.toLowerCase().trim();
+  document.getElementById('search-term').textContent = q;
+  let visible = 0;
+  cards.forEach(c => {
+    const tags = (c.dataset.tags || '') + ' ' + c.querySelector('.art-title').textContent.toLowerCase();
+    const catOk = activeCat === 'todos' || c.dataset.cat === activeCat;
+    const textOk = !term || tags.includes(term);
+    const show = catOk && textOk;
+    c.style.display = show ? 'block' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+}
+
+function filterCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterArticles(document.getElementById('search-input').value);
+}
+</script>
 </body>
 </html>
