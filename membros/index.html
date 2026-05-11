@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#CC785C"/>
+  <meta name="description" content="PediaSOS Membros — acesso a todos os guias PDF, fluxogramas imprimíveis e actualizações futuras. Planos a partir de €4,99."/>
+  <meta property="og:title" content="PediaSOS Membros — todos os guias num só lugar"/>
+  <meta property="og:description" content="Acesso completo a guias PDF, fluxogramas e conteúdo premium. Feito por um médico pediatra e intensivista."/>
+  <meta property="og:image" content="https://www.pediasos.org/assets/og-image.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="PediaSOS"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <title>PediaSOS Membros | PediaSOS</title>
+  <link rel="manifest" href="../manifest.json"/>
+  <link rel="apple-touch-icon" href="../assets/icon-512.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/style.css"/>
+  <style>
+    @media(max-width:768px){body{padding-bottom:80px;} .membros-plans{grid-template-columns:1fr!important}}
+    .faq-item{border-bottom:1px solid var(--sand-border);padding:18px 0}
+    .faq-q{font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-a{font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;margin-top:10px;display:none}
+    .faq-a.open{display:block}
+    .guarantee-box{background:linear-gradient(135deg,#F0FFF4,#E8F8F0);border:1.5px solid #B8E6C4;border-radius:16px;padding:24px;text-align:center;margin:40px 0}
+    .include-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+    @media(max-width:600px){.include-grid{grid-template-columns:1fr}}
+    .include-item{background:var(--white);border:1px solid var(--sand-border);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+    .include-ico{font-size:22px;flex-shrink:0}
+    .include-txt strong{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
+    .include-txt span{font-size:12px;color:var(--slate-lt)}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+    @media(max-width:700px){.testimonial-grid{grid-template-columns:1fr}}
+    .tcard{background:var(--white);border:1px solid var(--sand-border);border-radius:14px;padding:18px}
+    .tcard-stars{color:#F5A623;font-size:14px;margin-bottom:8px}
+    .tcard-text{font-size:13px;color:var(--slate);line-height:1.6;font-weight:300;font-style:italic;margin-bottom:10px}
+    .tcard-name{font-size:12px;color:var(--slate-lt);font-weight:500}
+  </style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html">
+      <img src="../assets/logo.png" alt="PediaSOS" class="logo-img"/>
+    </a>
+    <ul class="nav-tabs">
+      <li><a href="../index.html" id="t-inicio">Início</a></li>
+      <li><a href="../artigos/" id="t-artigos">Artigos</a></li>
+      <li><a href="../primeiros-socorros/" id="t-ps">Emergências</a></li>
+      <li><a href="../index.html#calc" id="t-calc">Calculadora</a></li>
+      <li><a href="../loja/" id="t-loja">Loja</a></li>
+      <li><a href="../blog/" id="t-blog">Blog</a></li>
+      <li><a href="../links/" id="t-links">Links</a></li>
+      <li><a href="../membros/" class="nav-cta">Membros ★</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="openDrawer()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a class="mob-tab" id="m-inicio" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab" id="m-artigos" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" id="m-ps" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" id="m-blog" href="../blog/"><span class="mob-tab-ico">✍️</span>Blog</a>
+    <a class="mob-tab" id="m-loja" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
+    <button class="mob-tab" onclick="openDrawer()" aria-label="Mais"><span class="mob-tab-ico">☰</span>Mais</button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="../assets/logo.png" alt="PediaSOS" class="drawer-logo"/>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-nav">
+        <a class="drawer-link" href="../index.html" id="d-inicio"><span class="drawer-link-ico">🏠</span>Início</a>
+        <a class="drawer-link" href="../artigos/" id="d-artigos"><span class="drawer-link-ico">📰</span>Artigos</a>
+        <a class="drawer-link" href="../primeiros-socorros/" id="d-ps"><span class="drawer-link-ico">🚨</span>Emergências</a>
+        <a class="drawer-link" href="../index.html#calc" id="d-calc"><span class="drawer-link-ico">⚖️</span>Calculadora</a>
+        <a class="drawer-link" href="../loja/" id="d-loja"><span class="drawer-link-ico">🛍️</span>Loja</a>
+        <a class="drawer-link" href="../blog/" id="d-blog"><span class="drawer-link-ico">✍️</span>Blog</a>
+        <a class="drawer-link" href="../links/" id="d-links"><span class="drawer-link-ico">🔗</span>Links</a>
+    <div class="drawer-divider"></div>
+    <a class="drawer-link" href="../links/"><span class="drawer-link-ico">🔗</span>Links úteis</a>
+    <a class="drawer-cta" href="../membros/">Membros ★ — Ver planos</a>
+  </div>
+</div>
+
+<main style="padding-top:var(--nav-h);">
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="membros-hero">
+      <div class="stag">Área de Membros</div>
+      <h1 class="stitle" style="font-size:clamp(32px,5vw,52px);">Tudo o que precisa de saber<br>sobre a saúde do seu filho,<br><em>num só lugar.</em></h1>
+      <p style="font-size:17px;color:var(--slate);font-weight:300;max-width:560px;margin:0 auto 32px;line-height:1.7;">Acesso completo a guias PDF imprimíveis, fluxogramas de emergência e todos os conteúdos futuros — criados por um médico pediatra e intensivista pediátrico com 20 anos de experiência.</p>
+    </div>
+
+    <!-- O que inclui -->
+    <div style="margin-bottom:48px;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div class="stag">O que está incluído</div>
+        <h2 class="stitle" style="margin-bottom:0;">Conteúdo que vale a pena ter</h2>
+      </div>
+      <div class="include-grid">
+        <div class="include-item"><div class="include-ico">🚨</div><div class="include-txt"><strong>6 Fluxogramas de Emergência PDF</strong><span>Engasgamento, queimadura, queda, anafilaxia, convulsão, RCP — prontos a imprimir</span></div></div>
+        <div class="include-item"><div class="include-ico">💊</div><div class="include-txt"><strong>Tabela de Doses por Peso</strong><span>Paracetamol e ibuprofeno 3–60 kg em PDF A4 e A5</span></div></div>
+        <div class="include-item"><div class="include-ico">🌡️</div><div class="include-txt"><strong>Guia da Febre</strong><span>Zonas verde/amarelo/vermelho, quando ir ao Urgência</span></div></div>
+        <div class="include-item"><div class="include-ico">🫀</div><div class="include-txt"><strong>Cartão de RCP Pediátrico</strong><span>Formato cartão de crédito, plastificável. Bebé e criança.</span></div></div>
+        <div class="include-item"><div class="include-ico">📋</div><div class="include-txt"><strong>Manual de Primeiros Socorros</strong><span>40 páginas com todas as emergências pediátricas frequentes</span></div></div>
+        <div class="include-item"><div class="include-ico">🔔</div><div class="include-txt"><strong>Actualizações futuras incluídas</strong><span>Todos os guias que forem criados — sem custo adicional</span></div></div>
+      </div>
+    </div>
+
+    <!-- Planos -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="stag">Escolha o seu plano</div>
+      <h2 class="stitle" style="margin-bottom:8px;">Preços simples, sem surpresas</h2>
+      <p style="font-size:14px;color:var(--slate-lt);">IVA incluído · Pagamento seguro via Gumroad · Recibo automático por email</p>
+    </div>
+
+    <div class="membros-plans" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:24px;max-width:900px;margin:0 auto;">
+
+      <!-- Plano Básico -->
+      <div class="plan-card">
+        <div class="plan-icon">📄</div>
+        <div class="plan-name">Guia Individual</div>
+        <div class="plan-price">€2<small>–€8</small></div>
+        <div class="plan-desc">Compre apenas o guia que precisa. Sem subscrição, sem compromisso.</div>
+        <ul class="plan-features">
+          <li>1 guia PDF à sua escolha</li>
+          <li>Download imediato</li>
+          <li>Uso pessoal e familiar</li>
+          <li class="no">Actualizações não incluídas</li>
+          <li class="no">Acesso ao pack completo</li>
+        </ul>
+        <a class="btn-plan outline" href="../loja/">Ver guias disponíveis →</a>
+      </div>
+
+      <!-- Plano Pack -->
+      <div class="plan-card featured">
+        <div class="plan-badge">★ Mais popular</div>
+        <div class="plan-icon">📦</div>
+        <div class="plan-name">Pack Completo</div>
+        <div class="plan-price">€9<small>.99</small></div>
+        <div class="plan-desc">Todos os guias actuais num único pagamento. A escolha da maioria das famílias.</div>
+        <ul class="plan-features">
+          <li>Todos os guias PDF actuais</li>
+          <li>Fluxogramas de emergência</li>
+          <li>Manual de primeiros socorros (40p.)</li>
+          <li>Cartão de RCP plastificável</li>
+          <li class="no">Actualizações futuras</li>
+        </ul>
+        <a class="btn-plan primary" href="https://pediasos.gumroad.com/l/LINK-pack-completo" target="_blank">Comprar pack — €9.99 →</a>
+      </div>
+
+      <!-- Plano Membros -->
+      <div class="plan-card">
+        <div class="plan-icon">⭐</div>
+        <div class="plan-name">Membro Anual</div>
+        <div class="plan-price">€14<small>.99/ano</small></div>
+        <div class="plan-desc">Pack completo + todas as actualizações futuras. O melhor valor a longo prazo.</div>
+        <ul class="plan-features">
+          <li>Tudo do Pack Completo</li>
+          <li>Todos os guias futuros incluídos</li>
+          <li>Acesso prioritário a novos conteúdos</li>
+          <li>Suporte por email</li>
+          <li>Cancele quando quiser</li>
+        </ul>
+        <a class="btn-plan primary" href="https://pediasos.gumroad.com/l/LINK-membro-anual" target="_blank">Tornar-me membro →</a>
+      </div>
+
+    </div>
+
+    <!-- Garantia -->
+    <div class="guarantee-box">
+      <div style="font-size:36px;margin-bottom:12px;">🛡️</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:#2D6A3F;margin-bottom:8px;">Garantia de 30 dias</div>
+      <p style="font-size:14px;color:var(--slate);font-weight:300;max-width:480px;margin:0 auto;">Se por qualquer motivo não ficar satisfeito, devolvemos o valor integral em 30 dias — sem perguntas. O Gumroad processa automaticamente o reembolso.</p>
+    </div>
+
+    <!-- Testemunhos -->
+    <div style="margin:48px 0 32px;text-align:center;">
+      <div class="stag">O que dizem os pais</div>
+      <h2 class="stitle" style="margin-bottom:0;">Famílias mais preparadas</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"O fluxograma da febre está colado no frigorífico há meses. Já o usei três vezes às 3 da manhã e evitou idas desnecessárias ao Urgência."</div>
+        <div class="tcard-name">Mãe de 2 filhos, Lisboa</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"Como pai de primeira viagem, o guia de engasgamento deu-me confiança. Pratiquei os passos antes de precisar. Depois precisei. Resultou."</div>
+        <div class="tcard-name">Pai de bebé de 8 meses, Porto</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"A linguagem é clara, sem jargão desnecessário. Sinto que finalmente percebo quando devo preocupar-me e quando não devo."</div>
+        <div class="tcard-name">Avó cuidadora, Coimbra</div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:700px;margin:48px auto 72px;">
+      <div style="text-align:center;margin-bottom:32px;">
+        <div class="stag">Dúvidas frequentes</div>
+        <h2 class="stitle" style="margin-bottom:0;">Perguntas e respostas</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quem emite o recibo? <span>+</span></div>
+        <div class="faq-a">O Gumroad emite automaticamente um recibo por email após o pagamento, com o nome do produto, valor e referência de transacção. O IVA de clientes da UE é gerido pelo próprio Gumroad. Receberá o recibo de imediato — verifique o spam se não aparecer na caixa de entrada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como faço o download após a compra? <span>+</span></div>
+        <div class="faq-a">O Gumroad envia um link de download imediato por email após a compra. Pode também aceder a todos os ficheiros comprados em <strong>gumroad.com/library</strong> com o email da compra — a qualquer hora, sem limite de tempo. Após a compra é também redireccionado para uma página de boas-vindas com instruções.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Posso imprimir os guias? <span>+</span></div>
+        <div class="faq-a">Sim, todos os guias são optimizados para impressão doméstica — A4 e alguns em formato A5 ou cartão. O cartão de RCP é pensado para plastificar e colocar na mala da praia, na escola ou no carro.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O plano anual renova automaticamente? <span>+</span></div>
+        <div class="faq-a">Sim, o plano Membro Anual renova automaticamente ao fim de 12 meses. Receberá um aviso por email 7 dias antes. Pode cancelar a qualquer momento no portal do Gumroad sem custos adicionais.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Este conteúdo é validado clinicamente? <span>+</span></div>
+        <div class="faq-a">Todo o conteúdo é produzido pelo Dr. Pedro Sampaio Nunes, médico especialista em Pediatria com diferenciação em Cuidados Intensivos Pediátricos e Formador Certificado de Reanimação (SBV e SAV). Os protocolos seguem as guidelines do European Resuscitation Council (ERC 2025) e da Sociedade Portuguesa de Pediatria. O conteúdo é educativo e não substitui consulta médica.</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <img src="../assets/logo.png" alt="PediaSOS" style="height:32px;"/>
+    <div class="foot-copy">© 2026 PediaSOS · Dr. Pedro Sampaio Nunes</div>
+    <div class="foot-links"><a href="../privacidade.html">Privacidade</a><a href="../termos.html">Termos</a></div>
+    <div class="foot-emerg">Conteúdo educativo. As doenças evoluem — perante novos sintomas ou agravamento, contacte o <strong>SNS 24 (808 24 24 24)</strong> ou o seu médico. Emergência: <strong>112</strong>.</div>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+<script>
+function toggleFaq(el) {
+  const a = el.nextElementSibling;
+  const span = el.querySelector('span');
+  const open = a.classList.toggle('open');
+  span.textContent = open ? '−' : '+';
+}
+</script>
+</body>
+</html>
