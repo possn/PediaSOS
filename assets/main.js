@@ -71,3 +71,88 @@ function dismissBanner() {
   const b = document.getElementById('install-banner');
   if (b) b.classList.remove('show');
 }
+
+/* ── READING PROGRESS BAR ── */
+(function(){
+  const bar = document.createElement('div');
+  bar.className = 'read-progress';
+  bar.id = 'read-progress';
+  document.body.appendChild(bar);
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const scrolled = doc.scrollTop || document.body.scrollTop;
+    const total = doc.scrollHeight - doc.clientHeight;
+    const pct = total > 0 ? (scrolled / total * 100) : 0;
+    bar.style.width = pct + '%';
+  }, {passive: true});
+})();
+
+/* ── READING TIME ── */
+function calcReadTime() {
+  const content = document.querySelector('.article-content, .blog-content');
+  if (!content) return;
+  const words = content.innerText.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  const stag = document.querySelector('.stag');
+  if (stag && !stag.querySelector('.read-time-badge')) {
+    const badge = document.createElement('span');
+    badge.className = 'read-time-badge';
+    badge.style.marginLeft = '8px';
+    badge.innerHTML = `⏱ ${mins} min`;
+    stag.appendChild(badge);
+  }
+}
+
+/* ── NATIVE SHARE ── */
+function shareArticle() {
+  const title = document.title.replace(' | PediaSOS', '');
+  const url = window.location.href;
+  const text = document.querySelector('meta[name="description"]')?.content || '';
+  if (navigator.share) {
+    navigator.share({ title, text, url }).catch(() => {});
+  } else {
+    // Fallback: copy to clipboard
+    navigator.clipboard?.writeText(url).then(() => {
+      const btn = document.getElementById('share-native-btn');
+      if (btn) { btn.textContent = '✓ Link copiado!'; setTimeout(() => btn.innerHTML = '↗ Partilhar', 2000); }
+    });
+  }
+}
+
+/* ── NEWSLETTER (Brevo/Sendinblue free tier) ── */
+function subscribeNewsletter(e) {
+  e.preventDefault();
+  const input = document.getElementById('nl-email');
+  const btn = document.getElementById('nl-btn');
+  const success = document.getElementById('nl-success');
+  const form = document.getElementById('nl-form');
+  if (!input?.value || !input.value.includes('@')) {
+    input.style.outline = '2px solid #E53E3E';
+    return;
+  }
+  btn.textContent = '...';
+  btn.disabled = true;
+  // Store email locally (replace with Brevo API when ready)
+  const emails = JSON.parse(localStorage.getItem('pediasos_subs') || '[]');
+  emails.push({email: input.value, date: new Date().toISOString()});
+  localStorage.setItem('pediasos_subs', JSON.stringify(emails));
+  setTimeout(() => {
+    if (form) form.style.display = 'none';
+    if (success) success.style.display = 'block';
+  }, 800);
+}
+
+/* ── INIT ALL UX FEATURES ── */
+document.addEventListener('DOMContentLoaded', () => {
+  calcReadTime();
+  // Add share button if on article/blog page
+  const shareRow = document.querySelector('.art-share');
+  if (shareRow) {
+    const btn = document.createElement('button');
+    btn.id = 'share-native-btn';
+    btn.className = 'share-native-btn';
+    btn.innerHTML = '↗ Partilhar';
+    btn.onclick = shareArticle;
+    shareRow.insertBefore(btn, shareRow.firstChild);
+  }
+});

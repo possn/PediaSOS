@@ -274,3 +274,43 @@ footer{border-top:1px solid var(--sand-border);padding:36px 0;background:var(--w
 .sos-bar a{color:white;text-decoration:underline}
 @media(max-width:900px){.ps-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.ps-grid{grid-template-columns:1fr}}
+
+/* ── BACK BUTTON ── */
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:100px;background:var(--white);border:1.5px solid var(--sand-border);font-size:13px;font-weight:500;color:var(--slate);text-decoration:none;transition:var(--t);margin-bottom:20px}
+.back-btn:hover{background:var(--mist);color:var(--ink);border-color:var(--ink)}
+.back-btn-ico{font-size:16px;line-height:1}
+
+/* ── PROGRESS BAR ── */
+.read-progress{position:fixed;top:var(--nav-h);left:0;width:0%;height:3px;background:var(--terracotta);z-index:199;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* ── READING TIME ── */
+.read-time-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:var(--tag-bg);border:1px solid var(--tag-border);border-radius:100px;font-size:11px;color:var(--slate);font-weight:500;margin-top:8px}
+
+/* ── SHARE NATIVE ── */
+.share-native-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:100px;background:var(--ink);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:var(--t)}
+.share-native-btn:hover{background:var(--terracotta)}
+.share-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+/* ── RELATED ARTICLES ── */
+.related-wrap{margin-top:48px;padding-top:32px;border-top:1px solid var(--sand-border)}
+.related-title{font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--white);border:1px solid var(--sand-border);border-radius:12px;padding:16px;text-decoration:none;display:block;transition:var(--t)}
+.related-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.related-card-cat{font-size:10px;font-weight:700;color:var(--terracotta);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.related-card-title{font-size:14px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:8px}
+.related-card-read{font-size:11px;color:var(--slate-lt)}
+
+/* ── NEWSLETTER ── */
+.newsletter-box{background:linear-gradient(135deg,#1A1410,#2D2520);border-radius:20px;padding:32px;margin-top:48px;text-align:center}
+.newsletter-box h3{font-family:'DM Serif Display',serif;font-size:22px;color:white;margin-bottom:8px}
+.newsletter-box p{font-size:14px;color:rgba(255,255,255,.7);font-weight:300;margin-bottom:20px;line-height:1.6}
+.newsletter-form{display:flex;gap:8px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.newsletter-input{flex:1;min-width:200px;padding:12px 18px;border-radius:100px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;background:rgba(255,255,255,.12);color:white}
+.newsletter-input::placeholder{color:rgba(255,255,255,.45)}
+.newsletter-input:focus{background:rgba(255,255,255,.18)}
+.newsletter-btn{padding:12px 22px;border-radius:100px;background:var(--terracotta);color:white;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:var(--t);white-space:nowrap}
+.newsletter-btn:hover{background:var(--terra-hover)}
+.newsletter-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:10px}
+.newsletter-success{color:white;font-size:14px;display:none}
