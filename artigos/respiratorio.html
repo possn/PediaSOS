@@ -9,6 +9,30 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/style.css"/>
   <style>@media(max-width:768px){body{padding-bottom:80px;}}</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Sinais de dificuldade respiratória que não pode ignorar",
+    "description": "Sinais de dificuldade respiratória na criança que não pode ignorar — guia para pais baseado em evidência clínica.",
+    "url": "https://www.pediasos.org/artigos/respiratorio.html",
+    "datePublished": "2026-05-01",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Pedro Sampaio Nunes",
+      "jobTitle": "Médico Pediatra e Intensivista Pediátrico"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PediaSOS",
+      "url": "https://www.pediasos.org"
+    },
+    "medicalAudience": {
+      "@type": "MedicalAudience",
+      "audienceType": "Patient"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -64,6 +88,8 @@
 
 <main style="padding-top:var(--nav-h);">
   <div class="article-wrap">
+        <a class="back-btn" href="../artigos/"><span class="back-btn-ico">←</span> Artigos</a>
+          
 
     <div class="article-header">
       <div class="stag">Respiratório · 7 min leitura</div>
@@ -176,6 +202,15 @@
 
     </div>
 
+    <div class="related-wrap">
+      <div class="related-title">Artigos relacionados</div>
+      <div class="related-grid">
+        <a class="related-card" href="febre.html"><div class="related-card-cat">Urgência</div><div class="related-card-title">Febre na criança — quando ir ao Urgência?</div><div class="related-card-read">⏱ 5 min</div></a>
+        <a class="related-card" href="convulsao.html"><div class="related-card-cat">Urgência</div><div class="related-card-title">Convulsão febril — o que fazer</div><div class="related-card-read">⏱ 5 min</div></a>
+        <a class="related-card" href="rcp.html"><div class="related-card-cat">Primeiros Socorros</div><div class="related-card-title">RCP — guia passo a passo</div><div class="related-card-read">⏱ 8 min</div></a>
+      </div>
+    </div>
+
     <div style="margin-top:48px;padding:24px;background:var(--white);border-radius:16px;border:1px solid var(--sand-border);display:flex;gap:18px;align-items:center;">
       <img src="../assets/logo.png" alt="PediaSOS" style="width:56px;height:56px;border-radius:50%;object-fit:contain;background:var(--sand);padding:6px;"/>
       <div>
@@ -184,6 +219,17 @@
       </div>
     </div>
 
+    <!-- NEWSLETTER -->
+    <div class="newsletter-box">
+      <h3>Novos artigos por email</h3>
+      <p>Um artigo por semana. Sem spam. Cancele quando quiser.</p>
+      <form id="nl-form" class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input id="nl-email" class="newsletter-input" type="email" placeholder="o-seu-email@exemplo.com" autocomplete="email"/>
+        <button id="nl-btn" class="newsletter-btn" type="submit">Subscrever →</button>
+      </form>
+      <div id="nl-success" class="newsletter-success">✓ Obrigado! Receberá o próximo artigo por email.</div>
+      <p class="newsletter-note">Sem spam · Sem partilha de dados · RGPD</p>
+    </div>
     <div style="margin-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <a class="btn btn-outline" href="index.html">← Todos os artigos</a>
       <a class="btn btn-accent" href="convulsao.html">Próximo artigo →</a>

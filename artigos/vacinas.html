@@ -4,14 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <meta name="theme-color" content="#CC785C"/>
-  <meta name="description" content="Calendário vacinal 2025 em Portugal — o que esperar em cada idade, reacções normais e quando preocupar. Guia para pais."/>
-  <meta property="og:title" content="Calendário Vacinal 2025 — guia para pais | PediaSOS"/>
+  <meta name="description" content="Calendário vacinal 2026 em Portugal — o que esperar em cada idade, reacções normais e quando preocupar. Guia para pais."/>
+  <meta property="og:title" content="Calendário Vacinal 2026 — guia para pais | PediaSOS"/>
   <meta property="og:description" content="Vacinas obrigatórias e recomendadas, reacções normais e quando chamar o médico. Feito por um médico pediatra."/>
   <meta property="og:image" content="https://www.pediasos.org/assets/og-image.png"/>
   <meta property="og:type" content="article"/>
   <meta property="og:site_name" content="PediaSOS"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <title>Calendário Vacinal 2025 — guia para pais | PediaSOS</title>
+  <title>Calendário Vacinal 2026 — guia para pais | PediaSOS</title>
   <link rel="manifest" href="../manifest.json"/>
   <link rel="apple-touch-icon" href="../assets/icon-512.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -28,6 +28,30 @@
     .vac-pill.snspvp{background:#E8F4FD;color:#1A6B9A}
     .vac-pill.rec{background:var(--tag-bg);color:var(--terracotta)}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Calendário Vacinal 2026 — guia para pais",
+    "description": "Calendário vacinal 2026 em Portugal — o que esperar em cada idade, reacções normais e quando preocupar. Guia para pais.",
+    "url": "https://www.pediasos.org/artigos/vacinas.html",
+    "datePublished": "2026-05-01",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Pedro Sampaio Nunes",
+      "jobTitle": "Médico Pediatra e Intensivista Pediátrico"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PediaSOS",
+      "url": "https://www.pediasos.org"
+    },
+    "medicalAudience": {
+      "@type": "MedicalAudience",
+      "audienceType": "Patient"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -83,10 +107,12 @@
 
 <main style="padding-top:var(--nav-h);">
   <div class="article-wrap">
+        <a class="back-btn" href="../artigos/"><span class="back-btn-ico">←</span> Artigos</a>
+          
 
     <div class="article-header">
       <div class="stag">Prevenção · 6 min leitura</div>
-      <h1 class="stitle">Calendário Vacinal 2025 —<br>o que esperar em <em>cada idade</em></h1>
+      <h1 class="stitle">Calendário Vacinal 2026 —<br>o que esperar em <em>cada idade</em></h1>
       <p style="font-size:14px;color:var(--slate-lt);margin-top:8px;">Por Dr. Pedro Sampaio Nunes · Março 2026</p>
       <div style="margin-top:20px;padding:14px 18px;background:var(--tag-bg);border:1px solid var(--tag-border);border-radius:12px;font-size:13px;color:var(--slate);line-height:1.6;">
         ℹ️ Este guia baseia-se no <strong>Programa Nacional de Vacinação (PNV) 2024</strong>, em vigor em Portugal. Verifique sempre com o seu pediatra ou centro de saúde.
@@ -233,6 +259,15 @@
 
     </div>
 
+    <div class="related-wrap">
+      <div class="related-title">Artigos relacionados</div>
+      <div class="related-grid">
+        <a class="related-card" href="febre.html"><div class="related-card-cat">Urgência</div><div class="related-card-title">Febre após vacina — o que fazer</div><div class="related-card-read">⏱ 5 min</div></a>
+        <a class="related-card" href="medicacao.html"><div class="related-card-cat">Medicação</div><div class="related-card-title">Paracetamol ou Ibuprofeno</div><div class="related-card-read">⏱ 4 min</div></a>
+        <a class="related-card" href="otite.html"><div class="related-card-cat">Infecções</div><div class="related-card-title">Otite — antibiótico sim ou não?</div><div class="related-card-read">⏱ 5 min</div></a>
+      </div>
+    </div>
+
     <div style="margin-top:48px;padding:24px;background:var(--white);border-radius:16px;border:1px solid var(--sand-border);display:flex;gap:18px;align-items:center;">
       <img src="../assets/logo.png" alt="PediaSOS" style="width:56px;height:56px;border-radius:50%;object-fit:contain;background:var(--sand);padding:6px;"/>
       <div>
@@ -241,6 +276,17 @@
       </div>
     </div>
 
+    <!-- NEWSLETTER -->
+    <div class="newsletter-box">
+      <h3>Novos artigos por email</h3>
+      <p>Um artigo por semana. Sem spam. Cancele quando quiser.</p>
+      <form id="nl-form" class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input id="nl-email" class="newsletter-input" type="email" placeholder="o-seu-email@exemplo.com" autocomplete="email"/>
+        <button id="nl-btn" class="newsletter-btn" type="submit">Subscrever →</button>
+      </form>
+      <div id="nl-success" class="newsletter-success">✓ Obrigado! Receberá o próximo artigo por email.</div>
+      <p class="newsletter-note">Sem spam · Sem partilha de dados · RGPD</p>
+    </div>
     <div style="margin-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <a class="btn btn-outline" href="index.html">← Todos os artigos</a>
       <a class="btn btn-accent" href="otite.html">Próximo artigo →</a>
