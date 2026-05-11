@@ -4,20 +4,39 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <meta name="theme-color" content="#CC785C"/>
-  <meta name="description" content="Primeiros socorros pediátricos — guias rápidos para engasgamento, queimaduras, convulsão, queda, anafilaxia e mais. Com semáforo de urgência."/>
-  <meta property="og:title" content="Emergências Pediátricas — guias rápidos | PediaSOS"/>
-  <meta property="og:description" content="O que fazer em 6 emergências pediátricas frequentes. Semáforo verde/amarelo/vermelho. Para pais e cuidadores."/>
+  <meta name="description" content="PediaSOS Membros — acesso a todos os guias PDF, fluxogramas imprimíveis e actualizações futuras. Planos a partir de €4,99."/>
+  <meta property="og:title" content="PediaSOS Membros — todos os guias num só lugar"/>
+  <meta property="og:description" content="Acesso completo a guias PDF, fluxogramas e conteúdo premium. Feito por um médico pediatra e intensivista."/>
   <meta property="og:image" content="https://www.pediasos.org/assets/og-image.png"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="PediaSOS"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <title>Emergências Pediátricas — guias rápidos | PediaSOS</title>
+  <title>PediaSOS Membros | PediaSOS</title>
   <link rel="manifest" href="../manifest.json"/>
   <link rel="apple-touch-icon" href="../assets/icon-512.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/style.css"/>
-  <style>@media(max-width:768px){body{padding-bottom:80px;}}</style>
+  <style>
+    @media(max-width:768px){body{padding-bottom:80px;} .membros-plans{grid-template-columns:1fr!important}}
+    .faq-item{border-bottom:1px solid var(--sand-border);padding:18px 0}
+    .faq-q{font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-a{font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;margin-top:10px;display:none}
+    .faq-a.open{display:block}
+    .guarantee-box{background:linear-gradient(135deg,#F0FFF4,#E8F8F0);border:1.5px solid #B8E6C4;border-radius:16px;padding:24px;text-align:center;margin:40px 0}
+    .include-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+    @media(max-width:600px){.include-grid{grid-template-columns:1fr}}
+    .include-item{background:var(--white);border:1px solid var(--sand-border);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+    .include-ico{font-size:22px;flex-shrink:0}
+    .include-txt strong{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
+    .include-txt span{font-size:12px;color:var(--slate-lt)}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+    @media(max-width:700px){.testimonial-grid{grid-template-columns:1fr}}
+    .tcard{background:var(--white);border:1px solid var(--sand-border);border-radius:14px;padding:18px}
+    .tcard-stars{color:#F5A623;font-size:14px;margin-bottom:8px}
+    .tcard-text{font-size:13px;color:var(--slate);line-height:1.6;font-weight:300;font-style:italic;margin-bottom:10px}
+    .tcard-name{font-size:12px;color:var(--slate-lt);font-weight:500}
+  </style>
 </head>
 <body>
 
@@ -40,111 +59,158 @@
   <div class="mob-nav-inner">
     <a class="mob-tab" href="../index.html"><span class="mob-tab-ico">🏠</span>Início</a>
     <a class="mob-tab" href="../artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
-    <a class="mob-tab active" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" href="../primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
     <a class="mob-tab" href="../index.html#calc"><span class="mob-tab-ico">⚖️</span>Doses</a>
     <a class="mob-tab" href="../loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
   </div>
 </nav>
 
-<div class="sos-bar">🚨 Em emergência grave — <a href="tel:112">ligue 112</a> imediatamente. Não leia primeiro.</div>
-
 <main style="padding-top:var(--nav-h);">
   <div class="container">
 
-    <div style="padding:48px 0 32px;">
-      <div class="stag">Guias rápidos de emergência</div>
-      <h1 class="stitle">Primeiros Socorros<br><em>Pediátricos</em></h1>
-      <p style="font-size:16px;color:var(--slate);font-weight:300;max-width:560px;margin-bottom:8px;">Toque em cada situação para ver o fluxograma completo com semáforo verde/amarelo/vermelho. Guias baseados nos protocolos do European Resuscitation Council (ERC 2025).</p>
-      <div style="display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;font-size:12px;">
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#E53E3E;display:inline-block;"></span> Risco de vida — 112 imediato</span>
-        <span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:50%;background:#D69E2E;display:inline-block;"></span> Urgente — consulta no próprio dia</span>
+    <!-- Hero -->
+    <div class="membros-hero">
+      <div class="stag">Área de Membros</div>
+      <h1 class="stitle" style="font-size:clamp(32px,5vw,52px);">Tudo o que precisa de saber<br>sobre a saúde do seu filho,<br><em>num só lugar.</em></h1>
+      <p style="font-size:17px;color:var(--slate);font-weight:300;max-width:560px;margin:0 auto 32px;line-height:1.7;">Acesso completo a guias PDF imprimíveis, fluxogramas de emergência e todos os conteúdos futuros — criados por um médico pediatra e intensivista pediátrico com 20 anos de experiência.</p>
+    </div>
+
+    <!-- O que inclui -->
+    <div style="margin-bottom:48px;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div class="stag">O que está incluído</div>
+        <h2 class="stitle" style="margin-bottom:0;">Conteúdo que vale a pena ter</h2>
+      </div>
+      <div class="include-grid">
+        <div class="include-item"><div class="include-ico">🚨</div><div class="include-txt"><strong>6 Fluxogramas de Emergência PDF</strong><span>Engasgamento, queimadura, queda, anafilaxia, convulsão, RCP — prontos a imprimir</span></div></div>
+        <div class="include-item"><div class="include-ico">💊</div><div class="include-txt"><strong>Tabela de Doses por Peso</strong><span>Paracetamol e ibuprofeno 3–60 kg em PDF A4 e A5</span></div></div>
+        <div class="include-item"><div class="include-ico">🌡️</div><div class="include-txt"><strong>Guia da Febre</strong><span>Zonas verde/amarelo/vermelho, quando ir ao Urgência</span></div></div>
+        <div class="include-item"><div class="include-ico">🫀</div><div class="include-txt"><strong>Cartão de RCP Pediátrico</strong><span>Formato cartão de crédito, plastificável. Bebé e criança.</span></div></div>
+        <div class="include-item"><div class="include-ico">📋</div><div class="include-txt"><strong>Manual de Primeiros Socorros</strong><span>40 páginas com todas as emergências pediátricas frequentes</span></div></div>
+        <div class="include-item"><div class="include-ico">🔔</div><div class="include-txt"><strong>Actualizações futuras incluídas</strong><span>Todos os guias que forem criados — sem custo adicional</span></div></div>
       </div>
     </div>
 
-    <div class="ps-grid">
+    <!-- Planos -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="stag">Escolha o seu plano</div>
+      <h2 class="stitle" style="margin-bottom:8px;">Preços simples, sem surpresas</h2>
+      <p style="font-size:14px;color:var(--slate-lt);">IVA incluído · Pagamento seguro via Gumroad · Recibo automático por email</p>
+    </div>
 
-      <div class="ps-card" onclick="openModal('engasgamento')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#FFF0F0,#FFD8D8);">🫁<div class="ps-sev-bar red"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Engasgamento</div>
-          <div class="ps-exc">Obstrução da via aérea por corpo estranho — situação de risco imediato</div>
-          <div class="ps-sev-label red"><span class="ps-dot red"></span>Risco de vida</div>
-        </div>
+    <div class="membros-plans" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:24px;max-width:900px;margin:0 auto;">
+
+      <!-- Plano Básico -->
+      <div class="plan-card">
+        <div class="plan-icon">📄</div>
+        <div class="plan-name">Guia Individual</div>
+        <div class="plan-price">€2<small>–€8</small></div>
+        <div class="plan-desc">Compre apenas o guia que precisa. Sem subscrição, sem compromisso.</div>
+        <ul class="plan-features">
+          <li>1 guia PDF à sua escolha</li>
+          <li>Download imediato</li>
+          <li>Uso pessoal e familiar</li>
+          <li class="no">Actualizações não incluídas</li>
+          <li class="no">Acesso ao pack completo</li>
+        </ul>
+        <a class="btn-plan outline" href="../loja/">Ver guias disponíveis →</a>
       </div>
 
-      <div class="ps-card" onclick="openModal('queimadura')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#FFF5E8,#FFE0B8);">🔥<div class="ps-sev-bar yellow"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Queimadura</div>
-          <div class="ps-exc">Térmicas, químicas, eléctricas — o que fazer nos primeiros minutos</div>
-          <div class="ps-sev-label yellow"><span class="ps-dot yellow"></span>Pode ser urgente</div>
-        </div>
+      <!-- Plano Pack -->
+      <div class="plan-card featured">
+        <div class="plan-badge">★ Mais popular</div>
+        <div class="plan-icon">📦</div>
+        <div class="plan-name">Pack Completo</div>
+        <div class="plan-price">€9<small>.99</small></div>
+        <div class="plan-desc">Todos os guias actuais num único pagamento. A escolha da maioria das famílias.</div>
+        <ul class="plan-features">
+          <li>Todos os guias PDF actuais</li>
+          <li>Fluxogramas de emergência</li>
+          <li>Manual de primeiros socorros (40p.)</li>
+          <li>Cartão de RCP plastificável</li>
+          <li class="no">Actualizações futuras</li>
+        </ul>
+        <a class="btn-plan primary" href="https://pediasos.gumroad.com/l/LINK-pack-completo" target="_blank">Comprar pack — €9.99 →</a>
       </div>
 
-      <div class="ps-card" onclick="openModal('queda')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#F0F8FF,#D8ECFF);">🤕<div class="ps-sev-bar yellow"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Queda e traumatismo craniano</div>
-          <div class="ps-exc">Quando a cabeça bate — sinais de alarme vs reacção normal</div>
-          <div class="ps-sev-label yellow"><span class="ps-dot yellow"></span>Pode ser urgente</div>
-        </div>
-      </div>
-
-      <div class="ps-card" onclick="openModal('anafilaxia')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#FFF0F0,#FFD0D0);">🐝<div class="ps-sev-bar red"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Anafilaxia / Reacção alérgica grave</div>
-          <div class="ps-exc">Identificar e agir antes que a via aérea feche</div>
-          <div class="ps-sev-label red"><span class="ps-dot red"></span>Risco de vida</div>
-        </div>
-      </div>
-
-      <div class="ps-card" onclick="openModal('convulsao')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#F5F0FF,#E8D8FF);">⚡<div class="ps-sev-bar yellow"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Convulsão</div>
-          <div class="ps-exc">O que fazer, o que nunca fazer, e quando ligar 112</div>
-          <div class="ps-sev-label yellow"><span class="ps-dot yellow"></span>Pode ser urgente</div>
-        </div>
-      </div>
-
-      <div class="ps-card" onclick="openModal('inconsciencia')">
-        <div class="ps-thumb" style="background:linear-gradient(135deg,#F0FFF0,#C8F0C8);">😶<div class="ps-sev-bar red"></div></div>
-        <div class="ps-body">
-          <div class="ps-title">Criança inconsciente</div>
-          <div class="ps-exc">Sequência de avaliação e quando iniciar RCP</div>
-          <div class="ps-sev-label red"><span class="ps-dot red"></span>Risco de vida</div>
-        </div>
+      <!-- Plano Membros -->
+      <div class="plan-card">
+        <div class="plan-icon">⭐</div>
+        <div class="plan-name">Membro Anual</div>
+        <div class="plan-price">€14<small>.99/ano</small></div>
+        <div class="plan-desc">Pack completo + todas as actualizações futuras. O melhor valor a longo prazo.</div>
+        <ul class="plan-features">
+          <li>Tudo do Pack Completo</li>
+          <li>Todos os guias futuros incluídos</li>
+          <li>Acesso prioritário a novos conteúdos</li>
+          <li>Suporte por email</li>
+          <li>Cancele quando quiser</li>
+        </ul>
+        <a class="btn-plan primary" href="https://pediasos.gumroad.com/l/LINK-membro-anual" target="_blank">Tornar-me membro →</a>
       </div>
 
     </div>
 
-    <!-- Promo membros -->
-    <div style="background:linear-gradient(135deg,#CC785C,#A85A40);border-radius:20px;padding:32px;margin-bottom:72px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;">Membros PediaSOS</div>
-        <div style="font-family:'DM Serif Display',serif;font-size:22px;color:white;margin-bottom:8px;">Descarregue todos os fluxogramas em PDF</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.8);font-weight:300;line-height:1.6;">Guias imprimíveis para colar no frigorífico, levar para a escola ou ter na mochila da praia. Actualizados com os protocolos ERC 2025.</p>
+    <!-- Garantia -->
+    <div class="guarantee-box">
+      <div style="font-size:36px;margin-bottom:12px;">🛡️</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:20px;color:#2D6A3F;margin-bottom:8px;">Garantia de 30 dias</div>
+      <p style="font-size:14px;color:var(--slate);font-weight:300;max-width:480px;margin:0 auto;">Se por qualquer motivo não ficar satisfeito, devolvemos o valor integral em 30 dias — sem perguntas. O Gumroad processa automaticamente o reembolso.</p>
+    </div>
+
+    <!-- Testemunhos -->
+    <div style="margin:48px 0 32px;text-align:center;">
+      <div class="stag">O que dizem os pais</div>
+      <h2 class="stitle" style="margin-bottom:0;">Famílias mais preparadas</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"O fluxograma da febre está colado no frigorífico há meses. Já o usei três vezes às 3 da manhã e evitou idas desnecessárias ao Urgência."</div>
+        <div class="tcard-name">Mãe de 2 filhos, Lisboa</div>
       </div>
-      <div style="flex-shrink:0;">
-        <a href="../membros/" class="btn" style="background:white;color:var(--terracotta);font-weight:600;white-space:nowrap;">Ver planos →</a>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"Como pai de primeira viagem, o guia de engasgamento deu-me confiança. Pratiquei os passos antes de precisar. Depois precisei. Resultou."</div>
+        <div class="tcard-name">Pai de bebé de 8 meses, Porto</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">★★★★★</div>
+        <div class="tcard-text">"A linguagem é clara, sem jargão desnecessário. Sinto que finalmente percebo quando devo preocupar-me e quando não devo."</div>
+        <div class="tcard-name">Avó cuidadora, Coimbra</div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:700px;margin:48px auto 72px;">
+      <div style="text-align:center;margin-bottom:32px;">
+        <div class="stag">Dúvidas frequentes</div>
+        <h2 class="stitle" style="margin-bottom:0;">Perguntas e respostas</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quem emite o recibo? <span>+</span></div>
+        <div class="faq-a">O Gumroad emite automaticamente um recibo por email após o pagamento, com o nome do produto, valor e referência de transacção. O IVA de clientes da UE é gerido pelo próprio Gumroad. Receberá o recibo de imediato — verifique o spam se não aparecer na caixa de entrada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Como faço o download após a compra? <span>+</span></div>
+        <div class="faq-a">O Gumroad envia um link de download imediato por email após a compra. Pode também aceder a todos os ficheiros comprados em <strong>gumroad.com/library</strong> com o email da compra — a qualquer hora, sem limite de tempo. Após a compra é também redireccionado para uma página de boas-vindas com instruções.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Posso imprimir os guias? <span>+</span></div>
+        <div class="faq-a">Sim, todos os guias são optimizados para impressão doméstica — A4 e alguns em formato A5 ou cartão. O cartão de RCP é pensado para plastificar e colocar na mala da praia, na escola ou no carro.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O plano anual renova automaticamente? <span>+</span></div>
+        <div class="faq-a">Sim, o plano Membro Anual renova automaticamente ao fim de 12 meses. Receberá um aviso por email 7 dias antes. Pode cancelar a qualquer momento no portal do Gumroad sem custos adicionais.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Este conteúdo é validado clinicamente? <span>+</span></div>
+        <div class="faq-a">Todo o conteúdo é produzido pelo Dr. Pedro Sampaio Nunes, médico especialista em Pediatria com diferenciação em Cuidados Intensivos Pediátricos e Formador Certificado de Reanimação (SBV e SAV). Os protocolos seguem as guidelines do European Resuscitation Council (ERC 2025) e da Sociedade Portuguesa de Pediatria. O conteúdo é educativo e não substitui consulta médica.</div>
       </div>
     </div>
 
   </div>
 </main>
-
-<!-- MODALS -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal-box" id="modal-box">
-    <div class="modal-head">
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
-      <span class="modal-emoji" id="m-emoji"></span>
-      <div class="modal-title" id="m-title"></div>
-    </div>
-    <div class="modal-body" id="m-body"></div>
-  </div>
-</div>
 
 <footer>
   <div class="foot-inner">
@@ -154,125 +220,14 @@
     <div class="foot-emerg">Conteúdo educativo. As doenças evoluem — perante novos sintomas ou agravamento, contacte o <strong>SNS 24 (808 24 24 24)</strong> ou o seu médico. Emergência: <strong>112</strong>.</div>
   </div>
 </footer>
-
 <script src="../assets/main.js"></script>
 <script>
-const MODALS = {
-  engasgamento: {
-    emoji: '🫁',
-    title: 'Engasgamento — Obstrução da Via Aérea',
-    body: `
-      <div class="zone-box zone-red" style="margin-top:0">
-        <div class="zone-title">🔴 É uma emergência — actue imediatamente</div>
-        <ul><li>Criança não consegue tossir, falar ou respirar → obstrução completa</li><li>Lábios/face a ficar azulados</li></ul>
-      </div>
-      <div class="flow-wrap" style="margin-top:16px">
-        <div class="flow-title">Sequência de actuação</div>
-        <div class="flow-steps">
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">1</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Avalie — a criança consegue tossir?</div><div class="flow-desc">Se sim e tosse eficaz → encoraje a tossir, não interfira. Se não consegue tossir, falar ou respirar → actue.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot yellow">2</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">5 pancadas nas costas</div><div class="flow-desc"><b>Criança:</b> Incline para a frente, 5 pancadas firmes com o calcanhar da mão entre as omoplatas.<br><b>Bebé:</b> Deite no antebraço em decúbito ventral (cabeça mais baixa), 5 pancadas interescapulares.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot yellow">3</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">5 compressões abdominais (Heimlich)</div><div class="flow-desc"><b>Criança ≥1 ano:</b> Por trás, mãos acima do umbigo, 5 compressões para dentro e para cima.<br><b>Bebé &lt;1 ano:</b> NUNCA Heimlich — usar 5 compressões torácicas no terço inferior do esterno.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot red">4</div></div><div class="flow-body"><div class="flow-label">Perde consciência → RCP</div><div class="flow-desc">Ligue 112. Inicie RCP — as compressões podem expulsar o objecto. Verifique a boca antes de cada insuflação (só retire o que vir claramente).</div><span class="flow-action red">🚨 112 imediato</span></div></div>
-        </div>
-      </div>
-      <div class="zone-box zone-green" style="margin-top:12px"><div class="zone-title">✅ Após resolver</div><ul><li>Mesmo que aparentemente bem, leve à observação médica — podem existir lesões internas ou corpo estranho residual</li></ul></div>
-    `
-  },
-  queimadura: {
-    emoji: '🔥',
-    title: 'Queimadura na criança',
-    body: `
-      <div class="flow-wrap" style="margin-top:0">
-        <div class="flow-title">🔥 Primeiros 10 minutos — cruciais</div>
-        <div class="flow-steps">
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">1</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Arrefeça com água corrente</div><div class="flow-desc">Água morna a fria (15–25°C) durante <b>20 minutos</b>. Não use gelo, manteiga, pasta de dentes ou qualquer outro produto. Não rebente bolhas.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">2</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Remova roupa e jóias</div><div class="flow-desc">Cuidadosamente, durante ou após o arrefecimento. Nunca arrange o tecido que esteja colado à pele.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">3</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Cubra com pano limpo húmido</div><div class="flow-desc">Não use pensos que colem. Mantenha a criança aquecida para evitar hipotermia enquanto arrefece a queimadura.</div></div></div>
-        </div>
-      </div>
-      <div class="zone-box zone-green"><div class="zone-title">🟢 Pode tratar em casa — queimadura 1º grau</div><ul><li>Apenas vermelhidão, sem bolhas</li><li>Área pequena (&lt;tamanho da palma da criança)</li><li>Não na face, mãos, pés, genitais ou sobre articulações</li></ul></div>
-      <div class="zone-box zone-yellow"><div class="zone-title">🟡 Urgência hospitalar</div><ul><li>Bolhas (2º grau)</li><li>Área maior que a palma da criança</li><li>Qualquer queimadura na face, pescoço, mãos, pés, genitais, articulações</li><li>Criança com menos de 1 ano — qualquer queimadura</li><li>Queimadura química ou eléctrica — sempre urgência</li></ul></div>
-      <div class="zone-box zone-red"><div class="zone-title">🔴 112 imediato</div><ul><li>Queimadura 3º grau (pele branca/cinza/negra, indolor — sinal de lesão profunda)</li><li>Criança em choque (palidez, confusão, prostração)</li><li>Queimadura eléctrica com perda de consciência</li><li>Inalação de fumo — rouquidão, tosse, face queimada</li></ul></div>
-    `
-  },
-  queda: {
-    emoji: '🤕',
-    title: 'Queda e Traumatismo Craniano',
-    body: `
-      <p style="font-size:14px;color:var(--slate);margin-bottom:16px;font-weight:300;">A maioria das quedas em crianças não causa lesão grave. A avaliação é clínica — o que importa é o estado da criança, não apenas a altura da queda.</p>
-      <div class="zone-box zone-green"><div class="zone-title">🟢 Aguardar em casa — observação</div><ul><li>Choro breve, depois acalma</li><li>Sem perda de consciência</li><li>Sem vómitos (ou apenas 1 vómito logo após o impacto)</li><li>Criança normal, a brincar, sem sonolência excessiva</li><li>Pequena bossa (hematoma subcutâneo) — sinal de que o osso absorveu o impacto</li><li><b>Observe durante 24–48h</b> — acorde de 2 em 2h na primeira noite se a queda foi de altura</li></ul></div>
-      <div class="zone-box zone-yellow"><div class="zone-title">🟡 Consulta urgente (mesmo dia)</div><ul><li>Queda de altura superior a 1 metro (ou altura do próprio corpo em bebés)</li><li>Vómitos repetidos (&gt;2 episódios)</li><li>Cefaleias progressivas</li><li>Comportamento diferente do habitual, irritabilidade persistente</li><li>Hematoma na região temporal (lado da cabeça) — risco de hemorragia epidural</li></ul></div>
-      <div class="zone-box zone-red"><div class="zone-title">🔴 112 imediato</div><ul><li>Perda de consciência (mesmo que breve)</li><li>Convulsão após a queda</li><li>Sonolência excessiva — difícil de acordar</li><li>Saída de líquido claro (LCR) pelo nariz ou ouvidos</li><li>Assimetria das pupilas</li><li>Bebé com fontanela abaulada</li><li>Fractura craniana visível ou palpável</li></ul></div>
-      <div style="margin-top:12px;padding:12px 16px;background:var(--mist);border-radius:10px;font-size:12px;color:var(--slate);">ℹ️ <b>Não mova a criança</b> se houver suspeita de lesão cervical (queda de grande altura, mergulho em água rasa, acidente de viação) até chegada do INEM.</div>
-    `
-  },
-  anafilaxia: {
-    emoji: '🐝',
-    title: 'Anafilaxia — Reacção Alérgica Grave',
-    body: `
-      <div class="zone-box zone-red" style="margin-top:0"><div class="zone-title">🔴 Suspeite de anafilaxia se, após contacto com alergénio:</div><ul><li>Pele + qualquer sintoma respiratório (pieira, estridor, dificuldade respiratória)</li><li>Pele + sintoma cardiovascular (palidez, desmaiamento, hipotensão)</li><li>Inchaço de língua ou garganta, voz rouca</li><li>Mesmo sem lesões na pele — anafilaxia pode ocorrer sem urticária</li></ul></div>
-      <div class="flow-wrap"><div class="flow-title">⚡ Sequência de actuação</div>
-        <div class="flow-steps">
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot red">1</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Adrenalina auto-injectável — USE JÁ</div><div class="flow-desc">Se prescrita: aplique na coxa lateral, mesmo por cima da roupa. Mantenha 10 segundos. O anti-histamínico <b>não substitui</b> a adrenalina na anafilaxia.</div><span class="flow-action red">💉 EpiPen / Jext / Emerade</span></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot red">2</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Ligue 112 imediatamente</div><div class="flow-desc">Mesmo que tenha usado adrenalina. Pode haver reacção bifásica 4–12h depois. O hospital é obrigatório.</div><span class="flow-action red">🚨 112</span></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">3</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Posição</div><div class="flow-desc">Dificuldade respiratória → manter sentada. Palidez/desmaiamento → deitar de costas, elevar pernas. Vómitos → posição lateral.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot yellow">4</div></div><div class="flow-body"><div class="flow-label">Pode repetir adrenalina após 5–15 min</div><div class="flow-desc">Se não melhorar e tiver 2º dispositivo disponível. Continue a aguardar o INEM.</div></div></div>
-        </div>
-      </div>
-      <div class="zone-box zone-green"><div class="zone-title">🟢 Reacção ligeira (só pele, criança bem)</div><ul><li>Cetirizina ou loratadina (dose por peso)</li><li>Observe 2–4h em casa</li><li>Se aparecer qualquer sintoma além da pele → 112</li></ul></div>
-    `
-  },
-  convulsao: {
-    emoji: '⚡',
-    title: 'Convulsão na criança',
-    body: `
-      <div class="flow-wrap" style="margin-top:0"><div class="flow-title">⏱️ O que fazer — por ordem</div>
-        <div class="flow-steps">
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot green">✓</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">FAÇA — mantenha a calma e olhe para o relógio</div><div class="flow-desc">Registe quando começou. Deite de lado (posição de recuperação). Afaste objectos perigosos. Desaperte roupas no pescoço. Fique junto da criança.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot red">✗</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">NUNCA</div><div class="flow-desc">Não coloque nada na boca. Não imobilize os movimentos. Não dê água ou medicamentos durante a convulsão. Não a coloque de pé.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot yellow">?</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">≥ 5 minutos → ligue 112</div><div class="flow-desc">Se durar mais de 5 minutos ou não souber a duração, ligue 112. É a fronteira para status epilepticus.</div><span class="flow-action red">🚨 112 aos 5 minutos</span></div></div>
-        </div>
-      </div>
-      <div class="zone-box zone-yellow"><div class="zone-title">🟡 Após a convulsão — vá ao Urgência se</div><ul><li>Primeira convulsão — sempre</li><li>Durou &gt;5 minutos</li><li>Não recupera normalmente em 30 minutos</li><li>Sem febre (convulsão afebril tem outras causas)</li><li>Défice neurológico após (fraqueza, confusão prolongada)</li></ul></div>
-      <div class="zone-box zone-green"><div class="zone-title">🟢 Normal após convulsão febril simples</div><ul><li>Sonolência 15–30 min (período pós-ictal)</li><li>Criança recupera completamente</li><li>Trate a febre com paracetamol</li><li>Ainda assim, consulte o pediatra no próprio dia ou seguinte</li></ul></div>
-      <p style="font-size:12px;color:var(--slate-lt);margin-top:12px;">Leia o artigo completo: <a href="../artigos/convulsao.html" style="color:var(--terracotta);">Convulsão febril — o que fazer →</a></p>
-    `
-  },
-  inconsciencia: {
-    emoji: '😶',
-    title: 'Criança inconsciente — Sequência de RCP',
-    body: `
-      <div class="zone-box zone-red" style="margin-top:0"><div class="zone-title">🔴 Ligue 112 antes de iniciar RCP — excepto se estiver sozinho com uma criança (então faça 1 min de RCP primeiro)</div></div>
-      <div class="flow-wrap"><div class="flow-title">🫀 Sequência SBV Pediátrico</div>
-        <div class="flow-steps">
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">1</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Segurança e avalie consciência</div><div class="flow-desc">Chame pelo nome, toque no ombro (criança) ou planta do pé (bebé). Sem resposta → grite por ajuda.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">2</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Abra a via aérea</div><div class="flow-desc"><b>Criança:</b> extensão moderada da cabeça + elevação do mento.<br><b>Bebé:</b> posição neutra (não hiperextender).</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot blue">3</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">Ver, ouvir, sentir — ≤10 segundos</div><div class="flow-desc">Gasping não é respiração eficaz. Se não respira normalmente → inicie RCP.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot yellow">4</div><div class="flow-line"></div></div><div class="flow-body"><div class="flow-label">5 insuflações de resgate iniciais</div><div class="flow-desc"><b>Criança:</b> boca-a-boca (tape o nariz), volume suficiente para ver o tórax elevar.<br><b>Bebé:</b> boca-a-boca-e-nariz, insufle suavemente.</div></div></div>
-          <div class="flow-step"><div class="flow-left"><div class="flow-dot red">5</div></div><div class="flow-body"><div class="flow-label">Compressões + ventilações — sem parar (ERC 2025)</div><div class="flow-desc"><b>Criança:</b> 2 mãos, terço inf. esterno, ~5cm, 100–120/min.<br><b>Bebé:</b> 2 dedos, terço inf. esterno, ~4cm.<br><b>Rácio:</b> 30:2 sem treino PBLS · 15:2 com treino PBLS · só compressões se não conseguir ventilar.<br>DEA: aplicar assim que disponível em <i>qualquer</i> idade.<br>Continue até o INEM chegar ou a criança recuperar.</div><span class="flow-action red">🚨 112 — não interrompa</span></div></div>
-        </div>
-      </div>
-      <p style="font-size:12px;color:var(--slate-lt);margin-top:12px;">⚠️ Este guia não substitui formação prática. Faça um curso de SBV. Leia o artigo completo: <a href="../artigos/rcp.html" style="color:var(--terracotta);">RCP passo a passo →</a></p>
-    `
-  }
-};
-
-function openModal(id) {
-  const m = MODALS[id];
-  document.getElementById('m-emoji').textContent = m.emoji;
-  document.getElementById('m-title').textContent = m.title;
-  document.getElementById('m-body').innerHTML = m.body;
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
+function toggleFaq(el) {
+  const a = el.nextElementSibling;
+  const span = el.querySelector('span');
+  const open = a.classList.toggle('open');
+  span.textContent = open ? '−' : '+';
 }
-function closeModal(e) {
-  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
-}
-function closeModalDirect() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 </script>
 </body>
 </html>
