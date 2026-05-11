@@ -167,18 +167,5 @@ function filterCat(cat, btn) {
   filterArticles(document.getElementById('search-input').value);
 }
 </script>
-<script>
-function openDrawer(){
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('drawer-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeDrawer(){
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('drawer-overlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
-</script>
 </body>
 </html>
