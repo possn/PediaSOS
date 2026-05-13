@@ -314,3 +314,6 @@ footer{border-top:1px solid var(--sand-border);padding:36px 0;background:var(--w
 .newsletter-btn:hover{background:var(--terra-hover)}
 .newsletter-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:10px}
 .newsletter-success{color:white;font-size:14px;display:none}
+
+.prod-thumb-img{aspect-ratio:4/3;overflow:hidden;display:block;}
+.prod-thumb-img img{width:100%;height:100%;object-fit:cover;display:block;}
