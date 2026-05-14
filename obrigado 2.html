@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#CC785C"/>
+  <meta name="robots" content="noindex"/>
+  <title>Obrigado pela compra | PediaSOS</title>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <style>
+    @media(max-width:768px){body{padding-bottom:80px;}}
+    .thank-wrap{max-width:560px;margin:0 auto;padding:64px 24px 48px;text-align:center;}
+    .thank-icon{font-size:64px;margin-bottom:24px;}
+    .thank-title{font-family:'DM Serif Display',serif;font-size:36px;color:var(--ink);line-height:1.2;margin-bottom:16px;}
+    .thank-sub{font-size:17px;color:var(--slate);font-weight:300;line-height:1.7;margin-bottom:32px;}
+    .thank-box{background:var(--white);border:1px solid var(--sand-border);border-radius:16px;padding:24px 28px;margin-bottom:32px;text-align:left;}
+    .thank-box-title{font-size:13px;font-weight:700;color:var(--terracotta);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px;}
+    .thank-box-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;font-size:15px;color:var(--slate);line-height:1.5;}
+    .thank-box-item:last-child{margin-bottom:0;}
+    .thank-ico{font-size:20px;flex-shrink:0;margin-top:1px;}
+    .thank-actions{display:flex;flex-direction:column;gap:12px;}
+  </style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo.png" alt="PediaSOS" class="logo-img"/>
+    </a>
+    <ul class="nav-tabs">
+      <li><a href="index.html" id="t-inicio">Início</a></li>
+      <li><a href="artigos/" id="t-artigos">Artigos</a></li>
+      <li><a href="primeiros-socorros/" id="t-ps">Emergências</a></li>
+      <li><a href="index.html#calc" id="t-calc">Calculadora</a></li>
+      <li><a href="loja/" id="t-loja">Loja</a></li>
+      <li><a href="blog/" id="t-blog">Blog</a></li>
+      <li><a href="links/" id="t-links">Links</a></li>
+      <li><a href="membros/" class="nav-cta">Membros ★</a></li>
+    </ul>
+    <button class="nav-menu-btn" onclick="openDrawer()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<nav class="mob-nav">
+  <div class="mob-nav-inner">
+    <a class="mob-tab" id="m-inicio" href="index.html"><span class="mob-tab-ico">🏠</span>Início</a>
+    <a class="mob-tab" id="m-artigos" href="artigos/"><span class="mob-tab-ico">📰</span>Artigos</a>
+    <a class="mob-tab" id="m-ps" href="primeiros-socorros/"><span class="mob-tab-ico">🚨</span>SOS</a>
+    <a class="mob-tab" id="m-blog" href="blog/"><span class="mob-tab-ico">✍️</span>Blog</a>
+    <a class="mob-tab" id="m-loja" href="loja/"><span class="mob-tab-ico">🛍️</span>Loja</a>
+    <button class="mob-tab" onclick="openDrawer()" aria-label="Mais"><span class="mob-tab-ico">☰</span>Mais</button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <img src="assets/logo.png" alt="PediaSOS" class="drawer-logo"/>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-nav">
+    <a class="drawer-link" href="index.html" id="d-inicio"><span class="drawer-link-ico">🏠</span>Início</a>
+    <a class="drawer-link" href="artigos/" id="d-artigos"><span class="drawer-link-ico">📰</span>Artigos</a>
+    <a class="drawer-link" href="primeiros-socorros/" id="d-ps"><span class="drawer-link-ico">🚨</span>Emergências</a>
+    <a class="drawer-link" href="index.html#calc" id="d-calc"><span class="drawer-link-ico">⚖️</span>Calculadora</a>
+    <a class="drawer-link" href="loja/" id="d-loja"><span class="drawer-link-ico">🛍️</span>Loja</a>
+    <a class="drawer-link" href="blog/" id="d-blog"><span class="drawer-link-ico">✍️</span>Blog</a>
+    <a class="drawer-link" href="links/" id="d-links"><span class="drawer-link-ico">🔗</span>Links</a>
+    <div class="drawer-divider"></div>
+    <a class="drawer-link" href="links/"><span class="drawer-link-ico">🔗</span>Links úteis</a>
+    <a class="drawer-cta" href="membros/">Membros ★ — Ver planos</a>
+  </div>
+</div>
+
+<main style="padding-top:var(--nav-h);">
+  <div class="thank-wrap">
+
+    <div class="thank-icon">🎉</div>
+    <h1 class="thank-title">Obrigado pela compra!</h1>
+    <p class="thank-sub">O seu ficheiro está a caminho. Receberá um email do Gumroad com o link de download — verifique também a pasta de spam se não aparecer em poucos minutos.</p>
+
+    <div class="thank-box">
+      <div class="thank-box-title">📋 Próximos passos</div>
+      <div class="thank-box-item">
+        <span class="thank-ico">📧</span>
+        <span>Abra o email do Gumroad e clique em <strong>"Download"</strong> para guardar o seu ficheiro.</span>
+      </div>
+      <div class="thank-box-item">
+        <span class="thank-ico">🖨️</span>
+        <span>Imprima em casa ou numa gráfica. Recomendamos papel de 120g ou superior para maior durabilidade.</span>
+      </div>
+      <div class="thank-box-item">
+        <span class="thank-ico">📌</span>
+        <span>Guarde num sítio visível — frigorífico, mala de primeiros socorros, porta do carro.</span>
+      </div>
+    </div>
+
+    <div class="thank-box">
+      <div class="thank-box-title">💬 Uma nota pessoal</div>
+      <div class="thank-box-item">
+        <span class="thank-ico">👨‍⚕️</span>
+        <span>Espero que este recurso nunca seja necessário em situação de emergência — mas que esteja lá quando precisar. Obrigado pela confiança.<br><br><strong>— Dr. Pedro Sampaio Nunes</strong></span>
+      </div>
+    </div>
+
+    <div class="thank-actions">
+      <a class="btn btn-accent" href="primeiros-socorros/">Ver guias de emergência gratuitos →</a>
+      <a class="btn btn-outline" href="loja/">Ver outros recursos da loja</a>
+      <a class="btn btn-outline" href="index.html">Voltar ao início</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <img src="assets/logo.png" alt="PediaSOS" style="height:32px;"/>
+    <div class="foot-copy">© 2026 PediaSOS · Dr. Pedro Sampaio Nunes</div>
+    <div class="foot-links"><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a></div>
+    <div class="foot-emerg">Conteúdo educativo. As doenças evoluem — perante novos sintomas ou agravamento, contacte o <strong>SNS 24 (808 24 24 24)</strong> ou o seu médico. Emergência: <strong>112</strong>.</div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
